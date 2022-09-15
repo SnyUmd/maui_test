@@ -3,39 +3,79 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp0.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+            <Button Grid.Column="0"
+                    Grid.Row="0"
+                    x:Name="btnPopUp"
+                    Text="PopUp"
+                    FontSize="10"
+                    WidthRequest="150"
+                    HeightRequest="40"
+                    Clicked="Click_btnPopUp"
+                    />
+            <Button Grid.Column="2"
+                    Grid.Row="0"
+                    x:Name="btnFileRead"
+                    Text="FileRead"
+                    FontSize="10"
+                    WidthRequest="150"
+                    HeightRequest="40"
+                    Clicked="Click_btnFileRead"
+                    />
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+        </Grid>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+        <ScrollView Grid.Row="4">
+            <VerticalStackLayout
+                Spacing="25"
+                Padding="30,0"
+                VerticalOptions="Center">
 
-        </VerticalStackLayout>
-    </ScrollView>
+                <Image
+                    Source="dotnet_bot.png"
+                    SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                    HeightRequest="200"
+                    HorizontalOptions="Center" />
 
+                <Label
+                    Text="Hello, World!!!!"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="32"
+                    HorizontalOptions="Center" />
+
+                <Label
+                    Text="Welcome to .NET Multi-platform App UI"
+                    SemanticProperties.HeadingLevel="Level2"
+                    SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                    FontSize="18"
+                    HorizontalOptions="Center" />
+
+                <Button
+                    x:Name="CounterBtn"
+                    Text="Click me"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Clicked="OnCounterClicked"
+                    HorizontalOptions="Center" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>
