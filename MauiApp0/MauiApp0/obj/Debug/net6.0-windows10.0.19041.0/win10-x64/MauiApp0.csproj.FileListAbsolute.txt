@@ -343,3 +343,5 @@ C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\ne
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\MauiCtrl.dll
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\MauiCtrl.pdb

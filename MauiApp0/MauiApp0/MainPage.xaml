@@ -40,6 +40,17 @@
                     HeightRequest="40"
                     Clicked="Click_btnFileRead"
                     />
+            <Button Grid.Column="0"
+                    Grid.Row="1"
+                    x:Name="btnOpenPage"
+                    Text="Open page"
+                    FontSize="10"
+                    WidthRequest="150"
+                    HeightRequest="40"
+                    Clicked="Click_btnOpenPage"
+                    />
+            <ContentView Grid.Column="1"
+                         Grid.Row="2"/>
 
         </Grid>
 

@@ -1,7 +1,12 @@
 ﻿namespace MauiApp0;
 
+using MauiCtrl;
+
 public partial class MainPage : ContentPage
 {
+    FileCtrl FC = new FileCtrl();
+    MessageCtrl MC = new MessageCtrl();
+
 	int count = 0;
 
 	public MainPage()
@@ -12,7 +17,7 @@ public partial class MainPage : ContentPage
 	//**********************************************************************************
 	private async void messageView()
     {
-		await DisplayAlert("Alert", "You have been alerted", "OK");
+        await DisplayAlert("Alert", "You have been alerted", "OK");
 
         bool answer = await DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
         await DisplayAlert("Alert", answer.ToString(), "OK");
@@ -21,30 +26,30 @@ public partial class MainPage : ContentPage
         await DisplayAlert("Alert", action, "OK");
     }
 
-	private async Task<FileResult> ReadFile(PickOptions options)
-	{
-        try
-        {
-            var result = await FilePicker.Default.PickAsync(options);
-            if (result != null)
-            {
-                if (result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
-                    result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase))
-                {
-                    using var stream = await result.OpenReadAsync();
-                    var image = ImageSource.FromStream(() => stream);
-                }
-            }
+	//private async Task<FileResult> ReadFile(PickOptions options)
+	//{
+ //       try
+ //       {
+ //           var result = await FilePicker.Default.PickAsync(options);
+ //           if (result != null)
+ //           {
+ //               if (result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
+ //                   result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase))
+ //               {
+ //                   using var stream = await result.OpenReadAsync();
+ //                   var image = ImageSource.FromStream(() => stream);
+ //               }
+ //           }
 
-            return result;
-        }
-        catch (Exception ex)
-        {
-            // The user canceled or something went wrong
-        }
+ //           return result;
+ //       }
+ //       catch (Exception ex)
+ //       {
+ //           // The user canceled or something went wrong
+ //       }
 
-        return null;
-    }
+ //       return null;
+ //   }
 
 
 
@@ -64,7 +69,9 @@ public partial class MainPage : ContentPage
 	//**********************************************************************************
 	private async void Click_btnPopUp(object sender, EventArgs e)
 	{
-		//messageView();
+        MC.MessageAlert("0", "1", "2");
+
+        //messageView();
         await DisplayAlert("Alert", "You have been alerted", "OK");
 
         bool answer = await DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
@@ -93,9 +100,16 @@ public partial class MainPage : ContentPage
         //    FileTypes = customFileType,
         //};
 
-        var select_file = await ReadFile(null);
+        var select_file = await FC.ReadFile(null);
         if(select_file != null)
             await DisplayAlert("Select file", select_file.FullPath, "OK");
+    }
+
+    private void Click_btnOpenPage(object sender, EventArgs e)
+    {
+        //NewPage1 np1 = new NewPage1();
+        Window secondWindow = new Window(new NewPage1());
+        Application.Current.OpenWindow(secondWindow);
     }
 }
 
