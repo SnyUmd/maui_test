@@ -253,3 +253,5 @@ C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\ne
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\MauiApp0.pdb
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\MauiApp0.genruntimeconfig.cache
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\ref\MauiApp0.dll
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\bin\Debug\net6.0-maccatalyst\maccatalyst-x64\MauiCtrl.dll
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\bin\Debug\net6.0-maccatalyst\maccatalyst-x64\MauiCtrl.pdb

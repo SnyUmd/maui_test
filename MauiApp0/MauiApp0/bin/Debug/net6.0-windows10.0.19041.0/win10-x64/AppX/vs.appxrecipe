@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-09-15T07:13:00.615</Modified>
+      <Modified>2022-09-15T09:36:37.359</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-09-15T07:05:18.029</Modified>
+      <Modified>2022-09-15T09:34:34.739</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\MauiApp0.runtimeconfig.json">
       <PackagePath>MauiApp0.runtimeconfig.json</PackagePath>
-      <Modified>2022-09-15T06:17:25.513</Modified>
+      <Modified>2022-09-15T08:59:09.126</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\MauiApp0.dll">
       <PackagePath>MauiApp0.dll</PackagePath>
-      <Modified>2022-09-15T07:12:59.331</Modified>
+      <Modified>2022-09-15T09:36:36.120</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>MauiApp0.exe</PackagePath>
-      <Modified>2022-09-15T07:12:59.351</Modified>
+      <Modified>2022-09-15T09:36:36.136</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.8\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1063,11 +1063,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\MauiCtrl\MauiCtrl\MauiCtrl\bin\Debug\net6.0\MauiCtrl.dll">
       <PackagePath>MauiCtrl.dll</PackagePath>
-      <Modified>2022-09-15T06:45:17.519</Modified>
+      <Modified>2022-09-15T09:09:26.047</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\MauiApp0.deps.json">
       <PackagePath>MauiApp0.deps.json</PackagePath>
-      <Modified>2022-09-15T07:13:00.484</Modified>
+      <Modified>2022-09-15T09:36:37.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\6.0.486\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -1087,23 +1087,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.546</Modified>
+      <Modified>2022-09-15T08:54:49.815</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.565</Modified>
+      <Modified>2022-09-15T08:54:49.861</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.593</Modified>
+      <Modified>2022-09-15T08:54:49.930</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.631</Modified>
+      <Modified>2022-09-15T08:54:49.974</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.762</Modified>
+      <Modified>2022-09-15T08:54:50.129</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -1115,147 +1115,147 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2022-09-15T06:17:23.801</Modified>
+      <Modified>2022-09-15T08:54:50.194</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2022-09-15T06:17:24.023</Modified>
+      <Modified>2022-09-15T08:54:50.470</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2022-09-15T06:17:24.037</Modified>
+      <Modified>2022-09-15T08:54:50.486</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2022-09-15T06:17:24.049</Modified>
+      <Modified>2022-09-15T08:54:50.500</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2022-09-15T06:17:24.070</Modified>
+      <Modified>2022-09-15T08:54:50.523</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2022-09-15T06:17:24.146</Modified>
+      <Modified>2022-09-15T08:54:50.592</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.819</Modified>
+      <Modified>2022-09-15T08:54:50.207</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.823</Modified>
+      <Modified>2022-09-15T08:54:50.214</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.828</Modified>
+      <Modified>2022-09-15T08:54:50.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.832</Modified>
+      <Modified>2022-09-15T08:54:50.226</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.837</Modified>
+      <Modified>2022-09-15T08:54:50.234</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.894</Modified>
+      <Modified>2022-09-15T08:54:50.307</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.900</Modified>
+      <Modified>2022-09-15T08:54:50.316</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.907</Modified>
+      <Modified>2022-09-15T08:54:50.325</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.918</Modified>
+      <Modified>2022-09-15T08:54:50.340</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.938</Modified>
+      <Modified>2022-09-15T08:54:50.368</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.865</Modified>
+      <Modified>2022-09-15T08:54:50.272</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.869</Modified>
+      <Modified>2022-09-15T08:54:50.277</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.874</Modified>
+      <Modified>2022-09-15T08:54:50.282</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.879</Modified>
+      <Modified>2022-09-15T08:54:50.287</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.888</Modified>
+      <Modified>2022-09-15T08:54:50.300</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.841</Modified>
+      <Modified>2022-09-15T08:54:50.240</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.846</Modified>
+      <Modified>2022-09-15T08:54:50.246</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.850</Modified>
+      <Modified>2022-09-15T08:54:50.252</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.854</Modified>
+      <Modified>2022-09-15T08:54:50.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.861</Modified>
+      <Modified>2022-09-15T08:54:50.266</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.944</Modified>
+      <Modified>2022-09-15T08:54:50.375</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.952</Modified>
+      <Modified>2022-09-15T08:54:50.385</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.962</Modified>
+      <Modified>2022-09-15T08:54:50.396</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.977</Modified>
+      <Modified>2022-09-15T08:54:50.413</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2022-09-15T06:17:24.014</Modified>
+      <Modified>2022-09-15T08:54:50.458</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.789</Modified>
+      <Modified>2022-09-15T08:54:50.250</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.801</Modified>
+      <Modified>2022-09-15T08:54:50.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.821</Modified>
+      <Modified>2022-09-15T08:54:50.288</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.845</Modified>
+      <Modified>2022-09-15T08:54:50.319</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2022-09-15T06:17:23.899</Modified>
+      <Modified>2022-09-15T08:54:50.383</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
