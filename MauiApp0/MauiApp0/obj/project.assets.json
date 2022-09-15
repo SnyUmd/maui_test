@@ -24573,11 +24573,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\uno_test\\MauiApp0\\MauiApp0\\MauiApp0\\MauiApp0.csproj",
+      "projectUniqueName": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiApp0\\MauiApp0\\MauiApp0.csproj",
       "projectName": "MauiApp0",
-      "projectPath": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\uno_test\\MauiApp0\\MauiApp0\\MauiApp0\\MauiApp0.csproj",
+      "projectPath": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiApp0\\MauiApp0\\MauiApp0.csproj",
       "packagesPath": "C:\\Users\\barnet\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\uno_test\\MauiApp0\\MauiApp0\\MauiApp0\\obj\\",
+      "outputPath": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiApp0\\MauiApp0\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

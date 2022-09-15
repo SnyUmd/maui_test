@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uTpWaGqRqaFHzPzX+iqFn0BkeIIn6VnhF1zzvES7VzSkg21GuYZz8gofL2wOffyyoIRrvf+9CEWV8V/M7JyJQw==",
+  "dgSpecHash": "zWUyu/uMdWE0nVtkBpV2sexPSG7YIjCR0Y0JWi6BIQKbyfrBXw8jigIXqjTJ6+JU6mvk0H1/Bku8RGG9cqevwg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\uno_test\\MauiApp0\\MauiApp0\\MauiApp0\\MauiApp0.csproj",
+  "projectFilePath": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiApp0\\MauiApp0\\MauiApp0.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\barnet\\.nuget\\packages\\googlegson\\2.9.0.1\\googlegson.2.9.0.1.nupkg.sha512",
     "C:\\Users\\barnet\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.1\\microsoft.extensions.configuration.6.0.1.nupkg.sha512",
