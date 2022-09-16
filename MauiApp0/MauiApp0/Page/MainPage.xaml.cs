@@ -1,14 +1,24 @@
 ﻿namespace MauiApp0;
 
+using MauiApp0.Page;
 using MauiCtrl;
+
+using System;
+using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+
+using System.Threading.Tasks;
+
 
 public enum enmDevice
 {
     desktop = 0,
     phone,
     tablet,
-    TV,
-    Watch
+    tv,
+    watch
 }
 
 public partial class MainPage : ContentPage
@@ -28,6 +38,8 @@ public partial class MainPage : ContentPage
 
         setDeviceList(ref device);
         checkDevice();
+        this.lblLog.Text += "\n";
+
     }
 
 	//**********************************************************************************
@@ -40,6 +52,12 @@ public partial class MainPage : ContentPage
 
         string action = await DisplayActionSheet("ActionSheet: Send to?", "Cancel", null, "Email", "Twitter", "Facebook");
         await DisplayAlert("Alert", action, "OK");
+    }
+
+    private void addLog(string add_val)
+    {
+        this.lblLog.Text += add_val;
+        this.lblLog.Text += "\n";
     }
 
 	//**********************************************************************************
@@ -82,49 +100,98 @@ public partial class MainPage : ContentPage
 	//**********************************************************************************
 	private async void Click_btnPopUp(object sender, EventArgs e)
 	{
+        addLog("-----Click po up-----");
         MC.MessageAlert("0", "1", "2");
 
         //messageView();
         await DisplayAlert("Alert", "You have been alerted", "OK");
 
-        bool answer = await DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
-        await DisplayAlert("Alert", answer.ToString(), "OK");
+        bool answer = await DisplayAlert("Question?", "which ?", "Yes", "No");
+        addLog($"answer : {answer.ToString()}");
 
         string action = await DisplayActionSheet("ActionSheet: Send to?", "Cancel", null, "Email", "Twitter", "Facebook");
-        await DisplayAlert("Alert", action, "OK");
+        addLog($"selected : {action}");
     }
 
 	//**********************************************************************************
 	private async void Click_btnFileRead(object sender, EventArgs e)
     {
+        addLog("-----Click file read-----");
         var select_file = await FC.ReadFile(null);
-        if(select_file != null)
+        if (select_file != null)
             await DisplayAlert("Select file", select_file.FullPath, "OK");
     }
 
 	//**********************************************************************************
     private void Click_btnOpenPage(object sender, EventArgs e)
     {
-        //NewPage1 np1 = new NewPage1();
-        //Window secondWindow = new Window(new NewPage1());
-        //Application.Current.OpenWindow(secondWindow);
+        addLog("-----Click open page-----");
+
         Navigation.PushAsync(new NewPage1(), true);
     }
 
 	//**********************************************************************************
-    private void Click_btnReadGPIO(object sender, EventArgs e)
+    private void Click_btnOpenPage_modal(object sender, EventArgs e)
     {
-
+        addLog("-----Click open page moal-----");
+        Navigation.PushModalAsync(new NewPage1(), true);
     }
 
-	//**********************************************************************************
+    //**********************************************************************************
+    private async void Click_btnReadGPIO(object sender, EventArgs e)
+    {
+        addLog("-----Click read GPIO-----");
+        TcpCtrl TC = new TcpCtrl();
+        string ipAdd = "192.168.0.18";
+        int port = 10000;
+
+        string rcv;
+        int portNum = 14;
+        string end_mess = "end";
+
+        TcpClient tcp = TC.connectTcp(ipAdd, port);
+        NetworkStream ns = TC.getNetworkStream(tcp);
+
+        try
+        {
+            rcv = TC.Recieve_TCP(ns);
+            this.lblLog.Text += $"reciev : {rcv}\n";
+            TC.Send_TCP(ns, portNum.ToString());
+            this.lblLog.Text += $"send : {portNum.ToString()}\n";
+            await Task.Delay(500);
+
+            rcv = "";
+            int loopCnt = 0;
+
+            for (loopCnt = 0; loopCnt < 10; loopCnt++)
+            {
+                rcv += TC.Recieve_TCP(ns);
+                if (rcv.Contains(end_mess))
+                    break;
+                await Task.Delay(500);
+            }
+
+            this.lblLog.Text += $"reciev : {rcv}\n";
+            this.lblLog.Text += $"Loop : {loopCnt}\n";
+        }
+        catch
+        {
+            await DisplayAlert("err", "Error", "OK");
+        }
+
+        ns.Close();
+        tcp.Close();
+    }
+
+    //**********************************************************************************
     private async void Click_btnDebug(object sender, EventArgs e)
     {
-        //int window_w = (int)this.Width;
-        //await DisplayAlert("", window_w.ToString(), "OK");
-        //if (window_w > 500)
-        //    this.WidthRequest = 400;
-        //await DisplayAlert("", ((int)enmDevice.phone).ToString(), "OK");
+        addLog("-----Click read debug-----");
+        await Navigation.PushAsync(new NewPage2(), true);
+
+
     }
+
+
 }
 
