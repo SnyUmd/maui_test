@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cFPIiQyIdvNBKxEipSruq3xupvWn7uhk1gXdTVmYBV4lT9bMlgsyr4xwTr6sWFeFl9/WqWaf9udf1J4SuCiW9Q==",
+  "dgSpecHash": "+ug2KhFLWnEvrx8JrGbrww1AjfR2TPpzMKyIm62cGe4FxEzX+CR0Op71TC802oKsTHLUH6PHjz5FaPl/Ja1Qyw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0.csproj",
+  "projectFilePath": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\barnet\\.nuget\\packages\\googlegson\\2.9.0.1\\googlegson.2.9.0.1.nupkg.sha512",
     "C:\\Users\\barnet\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.7\\microsoft.aspnetcore.authorization.6.0.7.nupkg.sha512",
