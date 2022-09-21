@@ -1,2 +1,2 @@
-AdbTarget=-s R5CNA08E57B
+AdbTarget=-s emulator-5554
 AdbOptions=

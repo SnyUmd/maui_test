@@ -944,6 +944,13 @@ C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\bin\Debug\ne
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\MauiApp0.csproj.CopyComplete
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\assets\MauiCtrl.dll
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\assets\MauiCtrl.pdb
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\typemaps.x86_64.s
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\environment.x86_64.s
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\compressed_assemblies.x86_64.s
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\typemaps.x86_64.o
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\environment.x86_64.o
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\compressed_assemblies.x86_64.o
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\app_shared_libraries\x86_64\libxamarin-app.so
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\assets\mscorlib.dll
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\assets\System.Collections.Concurrent.dll
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\assets\System.Data.dll
@@ -952,10 +959,3 @@ C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\ne
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\assets\System.Private.CoreLib.dll
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\assets\System.Private.Uri.dll
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\assets\System.Xml.dll
-C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\typemaps.arm64-v8a.s
-C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\environment.arm64-v8a.s
-C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\compressed_assemblies.arm64-v8a.s
-C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\typemaps.arm64-v8a.o
-C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\environment.arm64-v8a.o
-C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\android\compressed_assemblies.arm64-v8a.o
-C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\MauiApp0\MauiApp0\obj\Debug\net6.0-android\app_shared_libraries\arm64-v8a\libxamarin-app.so

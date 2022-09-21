@@ -4,12 +4,9 @@ namespace MauiApp0;
 
 using MauiApp0.Page;
 using MauiCtrl;
-
+using Microsoft.VisualBasic;
 using System;
-using System.Linq;
-using System.Net;
 using System.Net.Sockets;
-using System.Text;
 
 using System.Threading.Tasks;
 
@@ -149,23 +146,30 @@ public partial class MainPage : ContentPage
     private async void Click_btnReadGPIO(object sender, EventArgs e)
     {
         addLog("-----Click read GPIO-----", true);
-        TcpCtrl TC = new TcpCtrl();
-        string ipAdd = "192.168.0.18";
+
+        
+
+        TcpCtrl cls_tcpCtrl = new TcpCtrl();
+        TextCtrl cls_textCtrl = new TextCtrl();
+        string ipAdd = "raspberrypi.local";
         int port = 10000;
 
-        string rcv;
-        int portNum = int.Parse(lblPortNum.Text);
-        string end_word = "\n";
+        TcpClient tcp;
+        NetworkStream ns;
 
-        TcpClient tcp = TC.connectTcp(ipAdd, port);
-        NetworkStream ns = TC.getNetworkStream(tcp);
+        string rcv;
+        int portNum = cls_textCtrl.extractNum(btnReadGPIO.Text);
+        string end_word = "\n";
 
         try
         {
-            rcv = TC.Recieve_TCP(ns);
+            tcp = cls_tcpCtrl.connectTcp(ipAdd, port);
+            ns = cls_tcpCtrl.getNetworkStream(tcp);
+
+            rcv = cls_tcpCtrl.Recieve_TCP(ns);
             addLog($"reciev : {rcv}", true);
 
-            TC.Send_TCP(ns, portNum.ToString());
+            cls_tcpCtrl.Send_TCP(ns, portNum.ToString());
             addLog($"send : {portNum.ToString()}", true);
             await Task.Delay(500);
 
@@ -174,40 +178,41 @@ public partial class MainPage : ContentPage
 
             for (loopCnt = 0; loopCnt < 10; loopCnt++)
             {
-                rcv += TC.Recieve_TCP(ns);
+                rcv += cls_tcpCtrl.Recieve_TCP(ns);
                 if (rcv.Contains(end_word))
                     break;
                 await Task.Delay(500);
             }
 
-
             addLog($"reciev : {rcv}", false);
             addLog($"Loop : {loopCnt}", true);
 
+            ns.Close();
+            tcp.Close();
         }
         catch
         {
-            await DisplayAlert("err", "Error", "OK");
+            await DisplayAlert("Error", "Connection error", "OK");
+            addLog("Connection error", true);
         }
-
-        ns.Close();
-        tcp.Close();
     }
 
     //**********************************************************************************
     private void clicked_btnDown(object sender, EventArgs e)
     {
-        int num = int.Parse(lblPortNum.Text);
+        TextCtrl cls_textCtrl = new TextCtrl();
+        int num = cls_textCtrl.extractNum(btnReadGPIO.Text);
         if (num > 0)
-            lblPortNum.Text = (num - 1).ToString();
+            btnReadGPIO.Text = $"Port {num - 1}";
     }
 
     //**********************************************************************************
     private void clicked_btnUp(object sender, EventArgs e)
     {
-        int num = int.Parse(lblPortNum.Text);
+        TextCtrl cls_textCtrl = new TextCtrl();
+        int num = cls_textCtrl.extractNum(btnReadGPIO.Text);
         if (num < 40)
-            lblPortNum.Text = (num + 1).ToString();
+            btnReadGPIO.Text = $"Port {num + 1}";
     }
 
 
@@ -216,7 +221,9 @@ public partial class MainPage : ContentPage
     {
         addLog("-----Click read debug-----", true);
         SystemCtrl SC = new SystemCtrl();
-        addLog($"device : {SC.PrintIdiom().ToString()}", true);
+        //addLog($"device : {SC.PrintIdiom().ToString()}", true);
+        addLog($"device : {DeviceInfo.Current.Platform}", true);
+        addLog($"device : {DeviceInfo.Current.Version}", true);
     }
 
     //**********************************************************************************
@@ -225,6 +232,11 @@ public partial class MainPage : ContentPage
         addLog("-----Click read debug-----", true);
         await Navigation.PushAsync(new NewPage2(), true);
     }
+
+
+
+
+//**********************************************************************************
 
 
 }
