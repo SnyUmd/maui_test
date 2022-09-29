@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0.csproj": {}
+    "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0.csproj": {
+    "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0.csproj",
+        "projectUniqueName": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0.csproj",
         "projectName": "MauiAppBl0",
-        "projectPath": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0.csproj",
+        "projectPath": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0.csproj",
         "packagesPath": "C:\\Users\\barnet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiAppBl0\\MauiAppBl0\\MauiAppBl0\\obj\\",
+        "outputPath": "C:\\Users\\barnet\\Documents\\_bnt\\_sn\\!git\\maui_test\\MauiAppBl0\\MauiAppBl0\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

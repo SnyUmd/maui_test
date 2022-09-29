@@ -1,13 +1,12 @@
-﻿namespace MauiApp0;
+﻿#define Deb
+
+namespace MauiApp0;
 
 using MauiApp0.Page;
 using MauiCtrl;
-
+using Microsoft.VisualBasic;
 using System;
-using System.Linq;
-using System.Net;
 using System.Net.Sockets;
-using System.Text;
 
 using System.Threading.Tasks;
 
@@ -27,6 +26,7 @@ public partial class MainPage : ContentPage
     MessageCtrl MC = new MessageCtrl();
 
 	int count = 0;
+    double pageWidth = 0;
 
     List<DeviceIdiom> device = new List<DeviceIdiom>();
 
@@ -37,8 +37,7 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 
         setDeviceList(ref device);
-        checkDevice();
-        this.lblLog.Text += "\n";
+        setWidth();
 
     }
 
@@ -54,10 +53,16 @@ public partial class MainPage : ContentPage
         await DisplayAlert("Alert", action, "OK");
     }
 
-    private void addLog(string add_val)
+
+	//**********************************************************************************
+    private void addLog(string add_val, bool new_line)
     {
         this.lblLog.Text += add_val;
-        this.lblLog.Text += "\n";
+        if (new_line)
+            this.lblLog.Text += "\n";
+
+        ToolCtrl TC = new ToolCtrl();
+        TC.scroll_ScrollView(sv_log, 0, lblLog.Height, true);
     }
 
 	//**********************************************************************************
@@ -71,7 +76,7 @@ public partial class MainPage : ContentPage
     }
 
     //**********************************************************************************
-    private void checkDevice()
+    private void setWidth()
     {
         SystemCtrl SC = new SystemCtrl();
         DeviceIdiom executionDevice = SC.PrintIdiom();
@@ -79,7 +84,8 @@ public partial class MainPage : ContentPage
         if (executionDevice == device[(int)enmDevice.desktop] ||
             executionDevice == device[(int)enmDevice.tablet])
         {
-            this.WidthRequest = 400;
+            pageWidth = 400;
+            this.WidthRequest = pageWidth;
         }
     }
 
@@ -89,75 +95,82 @@ public partial class MainPage : ContentPage
     {
 		count++;
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+        CounterBtn.Text = (count == 1) ? $"Clicked {count} time" : $"Clicked {count} times";
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
+        SemanticScreenReader.Announce(CounterBtn.Text);
 	}
 
 	//**********************************************************************************
 	private async void Click_btnPopUp(object sender, EventArgs e)
 	{
-        addLog("-----Click po up-----");
+        addLog("-----Click po up-----", true);
         MC.MessageAlert("0", "1", "2");
 
         //messageView();
         await DisplayAlert("Alert", "You have been alerted", "OK");
 
         bool answer = await DisplayAlert("Question?", "which ?", "Yes", "No");
-        addLog($"answer : {answer.ToString()}");
+        addLog($"answer : {answer.ToString()}", true);
 
         string action = await DisplayActionSheet("ActionSheet: Send to?", "Cancel", null, "Email", "Twitter", "Facebook");
-        addLog($"selected : {action}");
+        addLog($"selected : {action}", true);
     }
 
 	//**********************************************************************************
 	private async void Click_btnFileRead(object sender, EventArgs e)
     {
-        addLog("-----Click file read-----");
+        addLog("-----Click file read-----", true);
         var select_file = await FC.ReadFile(null);
         if (select_file != null)
-            await DisplayAlert("Select file", select_file.FullPath, "OK");
+            addLog($"Selected file : {select_file.FullPath}", true);
+        else
+            addLog($"Selected file : null", true);
     }
 
-	//**********************************************************************************
+    //**********************************************************************************
     private void Click_btnOpenPage(object sender, EventArgs e)
     {
-        addLog("-----Click open page-----");
+        addLog("-----Click open page-----", true);
 
-        Navigation.PushAsync(new NewPage1(), true);
+        Navigation.PushAsync(new NewPage1(pageWidth), true);
     }
 
 	//**********************************************************************************
     private void Click_btnOpenPage_modal(object sender, EventArgs e)
     {
-        addLog("-----Click open page moal-----");
-        Navigation.PushModalAsync(new NewPage1(), true);
+        addLog("-----Click open page moal-----", true);
+        Navigation.PushModalAsync(new NewPage1(pageWidth), true);
     }
 
     //**********************************************************************************
     private async void Click_btnReadGPIO(object sender, EventArgs e)
     {
-        addLog("-----Click read GPIO-----");
-        TcpCtrl TC = new TcpCtrl();
-        string ipAdd = "192.168.0.18";
+        addLog("-----Click read GPIO-----", true);
+
+        
+
+        TcpCtrl cls_tcpCtrl = new TcpCtrl();
+        TextCtrl cls_textCtrl = new TextCtrl();
+        string ipAdd = "raspberrypi.local";
         int port = 10000;
 
-        string rcv;
-        int portNum = 14;
-        string end_mess = "end";
+        TcpClient tcp;
+        NetworkStream ns;
 
-        TcpClient tcp = TC.connectTcp(ipAdd, port);
-        NetworkStream ns = TC.getNetworkStream(tcp);
+        string rcv;
+        int portNum = cls_textCtrl.extractNum(btnReadGPIO.Text);
+        string end_word = "\n";
 
         try
         {
-            rcv = TC.Recieve_TCP(ns);
-            this.lblLog.Text += $"reciev : {rcv}\n";
-            TC.Send_TCP(ns, portNum.ToString());
-            this.lblLog.Text += $"send : {portNum.ToString()}\n";
+            tcp = cls_tcpCtrl.connectTcp(ipAdd, port);
+            ns = cls_tcpCtrl.getNetworkStream(tcp);
+
+            rcv = cls_tcpCtrl.Recieve_TCP(ns);
+            addLog($"reciev : {rcv}", true);
+
+            cls_tcpCtrl.Send_TCP(ns, portNum.ToString());
+            addLog($"send : {portNum.ToString()}", true);
             await Task.Delay(500);
 
             rcv = "";
@@ -165,33 +178,66 @@ public partial class MainPage : ContentPage
 
             for (loopCnt = 0; loopCnt < 10; loopCnt++)
             {
-                rcv += TC.Recieve_TCP(ns);
-                if (rcv.Contains(end_mess))
+                rcv += cls_tcpCtrl.Recieve_TCP(ns);
+                if (rcv.Contains(end_word))
                     break;
                 await Task.Delay(500);
             }
 
-            this.lblLog.Text += $"reciev : {rcv}\n";
-            this.lblLog.Text += $"Loop : {loopCnt}\n";
+            addLog($"reciev : {rcv}", false);
+            addLog($"Loop : {loopCnt}", true);
+
+            ns.Close();
+            tcp.Close();
         }
         catch
         {
-            await DisplayAlert("err", "Error", "OK");
+            await DisplayAlert("Error", "Connection error", "OK");
+            addLog("Connection error", true);
         }
+    }
 
-        ns.Close();
-        tcp.Close();
+    //**********************************************************************************
+    private void clicked_btnDown(object sender, EventArgs e)
+    {
+        TextCtrl cls_textCtrl = new TextCtrl();
+        int num = cls_textCtrl.extractNum(btnReadGPIO.Text);
+        if (num > 0)
+            btnReadGPIO.Text = $"Port {num - 1}";
+    }
+
+    //**********************************************************************************
+    private void clicked_btnUp(object sender, EventArgs e)
+    {
+        TextCtrl cls_textCtrl = new TextCtrl();
+        int num = cls_textCtrl.extractNum(btnReadGPIO.Text);
+        if (num < 40)
+            btnReadGPIO.Text = $"Port {num + 1}";
+    }
+
+
+    //**********************************************************************************
+    private void Click_btnCheckDevice(object sender, EventArgs e)
+    {
+        addLog("-----Click read debug-----", true);
+        SystemCtrl SC = new SystemCtrl();
+        //addLog($"device : {SC.PrintIdiom().ToString()}", true);
+        addLog($"device : {DeviceInfo.Current.Platform}", true);
+        addLog($"device : {DeviceInfo.Current.Version}", true);
     }
 
     //**********************************************************************************
     private async void Click_btnDebug(object sender, EventArgs e)
     {
-        addLog("-----Click read debug-----");
+        addLog("-----Click read debug-----", true);
         await Navigation.PushAsync(new NewPage2(), true);
-
-
     }
 
 
-}
 
+
+//**********************************************************************************
+
+
+}
+//**********************************************************************************
