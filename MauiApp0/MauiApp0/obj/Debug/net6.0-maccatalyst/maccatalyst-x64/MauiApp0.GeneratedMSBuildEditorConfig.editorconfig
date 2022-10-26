@@ -39,6 +39,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = MauiApp0.Page.NewPage2.xam
 build_metadata.AdditionalFiles.TargetPath = Page\NewPage2.xaml
 build_metadata.AdditionalFiles.RelativePath = Page\NewPage2.xaml
 
+[C:/Users/barnet/Documents/_bnt/_sn/\!git/maui_test/MauiApp0/MauiApp0/Page/pgQR.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiApp0.Page.pgQR.xaml
+build_metadata.AdditionalFiles.TargetPath = Page\pgQR.xaml
+build_metadata.AdditionalFiles.RelativePath = Page\pgQR.xaml
+
 [C:/Users/barnet/Documents/_bnt/_sn/\!git/maui_test/MauiApp0/MauiApp0/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MauiApp0.Resources.Styles.Colors.xaml
