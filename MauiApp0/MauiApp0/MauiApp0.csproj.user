@@ -17,5 +17,8 @@
     <MauiXaml Update="Page\NewPage2.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Page\pgQR.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
   </ItemGroup>
 </Project>
