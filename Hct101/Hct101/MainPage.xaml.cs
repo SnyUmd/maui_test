@@ -50,5 +50,11 @@ public partial class MainPage : ContentPage
         string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.humd]);
         writeLog($"Humd : {val}\n");
     }
+
+    //************************************************************************************
+    private void OnCounterClicked_btnDebug(object sender, EventArgs e)
+    {
+
+    }
 }
 

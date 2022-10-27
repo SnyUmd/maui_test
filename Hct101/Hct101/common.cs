@@ -23,7 +23,11 @@ namespace Hct101
             "http://esp32.airport/get?sts=humidity",
             "http://esp32.airport/get?sts=all"
         };
-        
 
+        public enum enmTest
+        {
+            test0,
+            test1
+        }
     }
 }
