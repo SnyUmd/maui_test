@@ -29,13 +29,13 @@
     <AppXManifest Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-10-27T00:37:01.130</Modified>
+      <Modified>2022-10-27T12:43:07.893</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-10-27T00:27:24.458</Modified>
+      <Modified>2022-10-27T12:13:14.139</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Hct101.runtimeconfig.json">
       <PackagePath>Hct101.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Hct101.dll">
       <PackagePath>Hct101.dll</PackagePath>
-      <Modified>2022-10-27T00:36:59.991</Modified>
+      <Modified>2022-10-27T12:13:11.508</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Hct101.exe</PackagePath>
-      <Modified>2022-10-27T00:37:00.005</Modified>
+      <Modified>2022-10-27T12:13:11.627</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.8\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1063,11 +1063,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\MauiCtrl\MauiCtrl\MauiCtrl\bin\Debug\net6.0\MauiCtrl.dll">
       <PackagePath>MauiCtrl.dll</PackagePath>
-      <Modified>2022-10-26T17:23:59.003</Modified>
+      <Modified>2022-10-27T06:15:27.761</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\Hct101.deps.json">
       <PackagePath>Hct101.deps.json</PackagePath>
-      <Modified>2022-10-27T00:37:00.963</Modified>
+      <Modified>2022-10-27T12:43:07.593</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\6.0.486\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
