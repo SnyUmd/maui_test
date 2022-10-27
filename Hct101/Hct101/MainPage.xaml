@@ -6,16 +6,17 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="5"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="10*"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="3*"/>
             <RowDefinition Height="5"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
+        
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10*"/>
@@ -25,6 +26,8 @@
                 <ColumnDefinition Width="10*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="5*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="5*"/>
@@ -58,6 +61,17 @@
                     x:Name="btnHumd"
                     Text="Get humd"
                     Clicked="OnCounterClicked_btnHumd"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    WidthRequest="100"
+                    HeightRequest="40"
+                    Margin="10"/>
+
+            <Button Grid.Column="4"
+                    Grid.Row="6"
+                    x:Name="btnDebug"
+                    Text="debug"
+                    Clicked="OnCounterClicked_btnDebug"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     WidthRequest="100"
