@@ -104,12 +104,13 @@ public partial class MainPage : ContentPage
 	private async void Click_btnPopUp(object sender, EventArgs e)
 	{
         addLog("-----Click po up-----", true);
-        MC.MessageAlert("0", "1", "2");
+        MC.MessageAlert(this, "0", "1", "2");
 
         //messageView();
         await DisplayAlert("Alert", "You have been alerted", "OK");
 
         bool answer = await DisplayAlert("Question?", "which ?", "Yes", "No");
+        answer = await MC.MessageAlert_yn(this, "test", "test", "yes", "no");
         addLog($"answer : {answer.ToString()}", true);
 
         string action = await DisplayActionSheet("ActionSheet: Send to?", "Cancel", null, "Email", "Twitter", "Facebook");
