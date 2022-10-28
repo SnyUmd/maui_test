@@ -17,7 +17,8 @@ namespace Hct101
         buzzer_off,
         //led_r,
         //led_g,
-        all
+        all,
+        a_file
     };
     //internal class clsCommon : ContentPage
     public class ClsCommon
@@ -40,7 +41,8 @@ namespace Hct101
             "http://esp32.airport/motor?sts=off",
             "http://esp32.airport/buzzer?sts=on",
             "http://esp32.airport/buzzer?sts=off",
-            "http://esp32.airport/get?sts=all"
+            "http://esp32.airport/get?sts=all",
+            @"C:\test/a.html"
         };
     }
 }
