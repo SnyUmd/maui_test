@@ -86,8 +86,9 @@ public partial class MainPage : ContentPage
         while (common.blAccessing) ;
         common.blAccessing = true;
         System.Threading.Thread.Sleep(100);
+        writeLog($"Tx : {common.aryHtml[(int)enmHtml.time]}\n");
         string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.time]);
-        writeLog($"Time : {val}\n");
+        writeLog($"Rx : {val}\n\n");
         common.blAccessing = false;
     }
 
@@ -97,8 +98,9 @@ public partial class MainPage : ContentPage
         while (common.blAccessing) ;
         common.blAccessing = true;
         System.Threading.Thread.Sleep(100);
+        writeLog($"Tx : {common.aryHtml[(int)enmHtml.temp]}\n");
         string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.temp]);
-        writeLog($"Temp : {val}\n");
+        writeLog($"Rx : {val}\n\n");
         common.blAccessing = false;
     }
 
@@ -108,8 +110,9 @@ public partial class MainPage : ContentPage
         while (common.blAccessing) ;
         common.blAccessing = true;
         System.Threading.Thread.Sleep(100);
+        writeLog($"Tx : {common.aryHtml[(int)enmHtml.humd]}\n");
         string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.humd]);
-        writeLog($"Humd : {val}\n");
+        writeLog($"Rx : {val}\n\n");
         common.blAccessing = false;
     }
 
@@ -136,8 +139,9 @@ public partial class MainPage : ContentPage
             btnMotor.TextColor = Colors.Black;
         }
 
+        writeLog($"Tx : {common.aryHtml[motorHttpNum]}\n");
         string val = HC.getHtml(wc, common.aryHtml[motorHttpNum]);
-        writeLog($"{val}\n");
+        writeLog($"Rx : {val}\n\n");
 
         common.blAccessing = false;
     }
@@ -165,8 +169,9 @@ public partial class MainPage : ContentPage
             btnBuzzer.TextColor = Colors.Black;
         }
 
+        writeLog($"Tx : {common.aryHtml[buzzerHttpNum]}\n");
         string val = HC.getHtml(wc, common.aryHtml[buzzerHttpNum]);
-        writeLog($"{val}\n");
+        writeLog($"Rx : {val}\n\n");
 
         common.blAccessing = false;
     }
@@ -179,6 +184,14 @@ public partial class MainPage : ContentPage
 
         //if (common.blAccessing) btnDebug.BackgroundColor = Colors.Yellow;
         //else btnDebug.BackgroundColor = Colors.Gray;
+        lblValue.Text = "";
+        while (common.blAccessing) ;
+        common.blAccessing = true;
+        System.Threading.Thread.Sleep(100);
+        writeLog($"Tx : {common.aryHtml[(int)enmHtml.a_file]}\n");
+        string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.a_file]);
+        writeLog($"Rx : {val}\n\n");
+        common.blAccessing = false;
     }
 
 
