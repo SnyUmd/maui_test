@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Timers;
 using taskTimers = System.Timers;
+//using AndroidX.Emoji2.Text.FlatBuffer;
 
 public partial class MainPage : ContentPage
 {
@@ -19,6 +20,7 @@ public partial class MainPage : ContentPage
     WebClient wc = new WebClient();
     HtmlCtrl HC = new HtmlCtrl();
     ClsCommon common = new ClsCommon();
+    TextCtrl tc = new TextCtrl();
 
     public enum enmTest
     {
@@ -32,7 +34,7 @@ public partial class MainPage : ContentPage
 
         if(DeviceInfo.Current.Platform == DevicePlatform.WinUI)
         {
-            this.WidthRequest = 400;
+            this.WidthRequest = 400;    
         }
 
         common.current_time = DateTime.Now;
@@ -78,20 +80,29 @@ public partial class MainPage : ContentPage
     {
         
     }
- 
 
     //************************************************************************************
-    private void OnCounterClicked_btnTime(object sender, EventArgs e)
+    private string accessHtml(string str_url)
     {
         while (common.blAccessing) ;
         common.blAccessing = true;
         System.Threading.Thread.Sleep(100);
-        writeLog($"Tx : {common.aryHtml[(int)enmHtml.time]}\n");
-        string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.time]);
+        string val = HC.getHtml(wc, str_url);
+        writeLog($"Tx : {str_url}\n");
         writeLog($"Rx : {val}\n\n");
         common.blAccessing = false;
+        return val;
     }
 
+    //************************************************************************************
+    private void TextChange_entInterval(object sender, TextChangedEventArgs e)
+    {
+        entInterval.Text = tc.extractNum_string(entInterval.Text);
+    }
+
+
+    //************************************************************************************
+    //************************************************************************************
     //************************************************************************************
     private void OnCounterClicked_btnTemp(object sender, EventArgs e)
     {
@@ -116,87 +127,238 @@ public partial class MainPage : ContentPage
         common.blAccessing = false;
     }
 
-    //************************************************************************************
-    private void OnCounterClicked_btnMotor(object sender, EventArgs e)
-    {
-        int motorHttpNum;
-        string log;
-        while (common.blAccessing) ;
-        common.blAccessing = true;
-        System.Threading.Thread.Sleep(100);
-        if (common.motorOn)
-        {
-            motorHttpNum = (int)enmHtml.motor_off;
-            common.motorOn = false;
-            btnMotor.BackgroundColor = Colors.Gray;
-            btnMotor.TextColor = Colors.White;
-        }
-        else
-        {
-            motorHttpNum = (int)enmHtml.motor_on;
-            common.motorOn = true;
-            btnMotor.BackgroundColor = Colors.Yellow;
-            btnMotor.TextColor = Colors.Black;
-        }
-
-        writeLog($"Tx : {common.aryHtml[motorHttpNum]}\n");
-        string val = HC.getHtml(wc, common.aryHtml[motorHttpNum]);
-        writeLog($"Rx : {val}\n\n");
-
-        common.blAccessing = false;
-    }
-
-
-    private void OnCounterClicked_btnBuzzer(object sender, EventArgs e)
-    {
-        int buzzerHttpNum;
-        string log;
-        while (common.blAccessing) ;
-        common.blAccessing = true;
-        System.Threading.Thread.Sleep(100);
-        if (common.buzzerOn)
-        {
-            buzzerHttpNum = (int)enmHtml.buzzer_off;
-            common.buzzerOn = false;
-            btnBuzzer.BackgroundColor = Colors.Gray;
-            btnBuzzer.TextColor = Colors.White;
-        }
-        else
-        {
-            buzzerHttpNum = (int)enmHtml.buzzer_on;
-            common.buzzerOn = true;
-            btnBuzzer.BackgroundColor = Colors.Yellow;
-            btnBuzzer.TextColor = Colors.Black;
-        }
-
-        writeLog($"Tx : {common.aryHtml[buzzerHttpNum]}\n");
-        string val = HC.getHtml(wc, common.aryHtml[buzzerHttpNum]);
-        writeLog($"Rx : {val}\n\n");
-
-        common.blAccessing = false;
-    }
-
 
     //************************************************************************************
     private async void OnCounterClicked_btnDebug(object sender, EventArgs e)
     {
-        //common.blAccessing = !common.blAccessing;
-
-        //if (common.blAccessing) btnDebug.BackgroundColor = Colors.Yellow;
-        //else btnDebug.BackgroundColor = Colors.Gray;
-        lblValue.Text = "";
+        string strUrl = "http://petoasis.airport/get" + "?item=dq";
         while (common.blAccessing) ;
-        common.blAccessing = true;
-        System.Threading.Thread.Sleep(100);
-        writeLog($"Tx : {common.aryHtml[(int)enmHtml.a_file]}\n");
-        string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.a_file]);
-        writeLog($"Rx : {val}\n\n");
-        common.blAccessing = false;
+        accessHtml(strUrl);
+    }
+
+
+    //************************************************************************************
+    private void OnCounterClicked_btnSetInterval10(object sender, EventArgs e)
+    {
+        //while (common.blAccessing) ;
+        //common.blAccessing = true;
+        //System.Threading.Thread.Sleep(100);
+        //writeLog($"Tx : {common.aryHtml[(int)enmHtml.set_interval10]}\n");
+        //string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.set_interval10]);
+        //writeLog($"Rx : {val}\n\n");
+        //common.blAccessing = false;
+    }
+
+    //************************************************************************************
+    private void OnCounterClicked_btnSetInterval5(object sender, EventArgs e)
+    {
+        //while (common.blAccessing) ;
+        //common.blAccessing = true;
+        //System.Threading.Thread.Sleep(100);
+        //writeLog($"Tx : {common.aryHtml[(int)enmHtml.set_interval5]}\n");
+        //string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.set_interval5]);
+        //writeLog($"Rx : {val}\n\n");
+        //common.blAccessing = false;
+    }
+
+    //************************************************************************************
+    private void OnCounterClicked_btnSetInterval20(object sender, EventArgs e)
+    {
+        //while (common.blAccessing) ;
+        //common.blAccessing = true;
+        //System.Threading.Thread.Sleep(100);
+        //writeLog($"Tx : {common.aryHtml[(int)enmHtml.set_interval20]}\n");
+        //string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.set_interval20]);
+        //writeLog($"Rx : {val}\n\n");
+        //common.blAccessing = false;
+    }
+
+    //************************************************************************************
+    private void OnCounterClicked_btnSetInterval0(object sender, EventArgs e)
+    {
+        string strArea = "w";
+        if (btnArea.Text == "Food") strArea = "f";
+        string strUrl = common.aryHtml[(int)enmHtml.set] + $"?target={strArea}&interval=0";
+
+        while (common.blAccessing) ;
+        accessHtml(strUrl);
+    }
+
+    //************************************************************************************
+    private void OnCounterClicked_btnAdjustW(object sender, EventArgs e)
+    {
+        //while (common.blAccessing) ;
+        //common.blAccessing = true;
+        //System.Threading.Thread.Sleep(100);
+        //writeLog($"Tx : {common.aryHtml[(int)enmHtml.adjust_w]}\n");
+        //string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.adjust_w]);
+        //writeLog($"Rx : {val}\n\n");
+        //common.blAccessing = false;
+    }
+
+    //************************************************************************************
+    private void OnCounterClicked_btnAdjustF(object sender, EventArgs e)
+    {
+        //while (common.blAccessing) ;
+        //common.blAccessing = true;
+        //System.Threading.Thread.Sleep(100);
+        //writeLog($"Tx : {common.aryHtml[(int)enmHtml.adjust_f]}\n");
+        //string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.adjust_f]);
+        //writeLog($"Rx : {val}\n\n");
+        //common.blAccessing = false;
+    }
+
+    //************************************************************************************
+    private void Clicked_btnArea(object sender, EventArgs e)
+    {
+        if (btnArea.Text == "Water")
+        {
+            btnArea.Text = "Food";
+            btnArea.BackgroundColor = Colors.Brown;
+        }
+        else if (btnArea.Text == "Food")
+        {
+            btnArea.Text = "Water";
+            btnArea.BackgroundColor = Colors.MediumBlue;
+
+        }
+    }
+
+    //************************************************************************************
+    private void Clicked_btnNow(object sender, EventArgs e)
+    {
+        string strArea = "w";
+        if (btnArea.Text == "Food") strArea = "f";
+        string strUrl = common.aryHtml[(int)enmHtml.now] + $"?target={strArea}";
+
+        while (common.blAccessing) ;
+        accessHtml(strUrl);
+    }
+
+
+
+
+    //************************************************************************************
+    private async void Click_btnSetInterval(object sender, EventArgs e)
+    {
+        string strArea = "w";
+        if (btnArea.Text == "Food") strArea = "f";
+        string strUrl = common.aryHtml[(int)enmHtml.set] + $"?target={strArea}&interval={entInterval.Text}";
+        //await DisplayAlert("", strUrl, "OK");
+        while (common.blAccessing);
+        accessHtml(strUrl);
+    }
+
+//************************************************************************************
+    private void Click_btnAdjust(object sender, EventArgs e)
+    {
+        string strArea = "w";
+        string strDirection = "r";
+        if (btnArea.Text == "Food") strArea = "f";
+        if (btnDirection.Text == "Left") strDirection = "l";
+        string strUrl = common.aryHtml[(int)enmHtml.adjust] + $"?target={strArea}&direction={strDirection}";
+
+        while (common.blAccessing) ;
+        accessHtml(strUrl);
+    }
+
+//************************************************************************************
+    private void Click_btnDirection(object sender, EventArgs e)
+    {
+        if (btnDirection.Text == "Right")
+        {
+            btnDirection.Text = "Left";
+            btnDirection.BackgroundColor = Colors.OrangeRed;
+        }
+        else if (btnDirection.Text == "Left")
+        {
+            btnDirection.Text = "Right";
+            btnDirection.BackgroundColor = Colors.Orange;
+
+        }
+    }
+
+//************************************************************************************
+    private void Click_btnBoolean(object sender, EventArgs e)
+    {
+        if (btnBoolean.Text == "false")
+        {
+            btnBoolean.Text = "true";
+            btnBoolean.BackgroundColor = Colors.MediumVioletRed;
+        }
+        else if (btnBoolean.Text == "true")
+        {
+            btnBoolean.Text = "false";
+            btnBoolean.BackgroundColor = Colors.SteelBlue;
+
+        }
+    }
+
+//************************************************************************************
+    private void Clicked_btnGetMelody(object sender, EventArgs e)
+    {
+        string strArea = "w";
+        if (btnArea.Text == "Food") strArea = "f";
+        string strUrl = "http://petoasis.airport/get"+ $"?target={strArea}&item=melody";
+        //await DisplayAlert("", strUrl, "OK");
+        while (common.blAccessing) ;
+        accessHtml(strUrl);
+    }
+
+//************************************************************************************
+    private void Clicked_btnGetInterval(object sender, EventArgs e)
+    {
+        string strArea = "w";
+        if (btnArea.Text == "Food") strArea = "f";
+        string strUrl = "http://petoasis.airport/get" + $"?target={strArea}&item=interval";
+        //await DisplayAlert("", strUrl, "OK");
+        while (common.blAccessing) ;
+        accessHtml(strUrl);
+    }
+
+//************************************************************************************
+    private void Clicked_btnSetRing(object sender, EventArgs e)
+    {
+        string strArea = "w";
+        string strVal = "false";
+        if (btnBoolean.Text == "Food") strArea = "f";
+        if (btnBoolean.Text == "true") strVal = "true";
+        string strUrl = common.aryHtml[(int)enmHtml.set] + $"?target={strArea}&ring={strVal}";
+        //await DisplayAlert("", strUrl, "OK");
+        while (common.blAccessing) ;
+        accessHtml(strUrl);
+    }
+
+//************************************************************************************
+    private void Clicked_btnGetRing(object sender, EventArgs e)
+    {
+        string strArea = "w";
+        if (btnArea.Text == "Food") strArea = "f";
+        string strUrl = "http://petoasis.airport/get" + $"?target={strArea}&item=ring";
+        //await DisplayAlert("", strUrl, "OK");
+        while (common.blAccessing) ;
+        accessHtml(strUrl);
+
+    }
+
+//************************************************************************************
+    private void Clicked_btnGetNext(object sender, EventArgs e)
+    {
+
+        string strArea = "w";
+        if (btnArea.Text == "Food") strArea = "f";
+        string strUrl = "http://petoasis.airport/get" + $"?target={strArea}&item=next";
+        //await DisplayAlert("", strUrl, "OK");
+        while (common.blAccessing) ;
+        accessHtml(strUrl);
     }
 
 
 }
 
+
+
+//************************************************************************************
 
 
 
