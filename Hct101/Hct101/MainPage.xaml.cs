@@ -34,7 +34,7 @@ public partial class MainPage : ContentPage
 
         if(DeviceInfo.Current.Platform == DevicePlatform.WinUI)
         {
-            this.WidthRequest = 400;    
+            //this.WidthRequest = 400;    
         }
 
         common.current_time = DateTime.Now;
@@ -106,13 +106,13 @@ public partial class MainPage : ContentPage
     //************************************************************************************
     private void OnCounterClicked_btnTemp(object sender, EventArgs e)
     {
-        while (common.blAccessing) ;
-        common.blAccessing = true;
-        System.Threading.Thread.Sleep(100);
-        writeLog($"Tx : {common.aryHtml[(int)enmHtml.temp]}\n");
-        string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.temp]);
-        writeLog($"Rx : {val}\n\n");
-        common.blAccessing = false;
+        //while (common.blAccessing) ;
+        //common.blAccessing = true;
+        //System.Threading.Thread.Sleep(100);
+        //writeLog($"Tx : {common.aryHtml[(int)enmHtml.temp]}\n");
+        //string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.temp]);
+        //writeLog($"Rx : {val}\n\n");
+        //common.blAccessing = false;
     }
 
     //************************************************************************************
@@ -131,9 +131,9 @@ public partial class MainPage : ContentPage
     //************************************************************************************
     private async void OnCounterClicked_btnDebug(object sender, EventArgs e)
     {
-        string strUrl = "http://petoasis.airport/get" + "?item=dq";
-        while (common.blAccessing) ;
-        accessHtml(strUrl);
+        //string strUrl = "http://petoasis.airport/get" + "?item=dq";
+        //while (common.blAccessing) ;
+        //accessHtml(strUrl);
     }
 
 
@@ -254,9 +254,11 @@ public partial class MainPage : ContentPage
     {
         string strArea = "w";
         string strDirection = "r";
+        string motion = "5";
         if (btnArea.Text == "Food") strArea = "f";
         if (btnDirection.Text == "Left") strDirection = "l";
-        string strUrl = common.aryHtml[(int)enmHtml.adjust] + $"?target={strArea}&direction={strDirection}";
+        motion = entInterval.Text;
+        string strUrl = common.aryHtml[(int)enmHtml.adjust] + $"?target={strArea}&direction={strDirection}&motion={motion}";
 
         while (common.blAccessing) ;
         accessHtml(strUrl);
@@ -353,7 +355,17 @@ public partial class MainPage : ContentPage
         accessHtml(strUrl);
     }
 
+//************************************************************************************
+    private void OnCounterClicked_btnLogClear(object sender, EventArgs e)
+    {
+        lblValue.Text = "";
+    }
 
+//************************************************************************************
+    private void OnCounterClicked_btnLogCopy(object sender, EventArgs e)
+    {
+        Clipboard.SetTextAsync(lblValue.Text);
+    }
 }
 
 
