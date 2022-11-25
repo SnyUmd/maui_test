@@ -6,20 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hct101
 {
-    public enum enmHtml
-    {
-        time,
-        temp,
-        humd,
-        motor_on,
-        motor_off,
-        buzzer_on,
-        buzzer_off,
-        //led_r,
-        //led_g,
-        all,
-        a_file
-    };
+    
     //internal class clsCommon : ContentPage
     public class ClsCommon
     {
@@ -34,15 +21,23 @@ namespace Hct101
 
         public string[] aryHtml =
         {
-            "http://esp32.airport/get?sts=time",
-            "http://esp32.airport/get?sts=temperture",
-            "http://esp32.airport/get?sts=humidity",
-            "http://esp32.airport/motor?sts=on",
-            "http://esp32.airport/motor?sts=off",
-            "http://esp32.airport/buzzer?sts=on",
-            "http://esp32.airport/buzzer?sts=off",
-            "http://esp32.airport/get?sts=all",
+            "http://petoasis.airport/get?item=temperture",
+            "http://petoasis.airport/get?item=humidity",
+            "http://petoasis.airport/get?sts=all",
+            "http://petoasis.airport/set",
+            "http://petoasis.airport/adjust",
+            "http://petoasis.airport/now",
             @"C:\test/a.html"
         };
     }
+    public enum enmHtml
+    {
+        temp,
+        humd,
+        all,
+        set,
+        adjust,
+        now,
+        file
+    };
 }

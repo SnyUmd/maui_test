@@ -5,22 +5,19 @@
     <Frame BackgroundColor="LightYellow">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="5"/>
                 <RowDefinition Height="5*"/>
-                <RowDefinition Height="10"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="1"/>
-                <RowDefinition Height="1"/>
-                <RowDefinition Height="9*"/>
                 <RowDefinition Height="5"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2"/>
                     <ColumnDefinition Width="10*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2"/>
                     <ColumnDefinition Width="10*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -31,27 +28,38 @@
                     <RowDefinition Height="5*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
+                
                 <Button Grid.Column="0"
                         Grid.Row="0"
-                    x:Name="btnTime"
-                    Text="Get time"
-                    Clicked="OnCounterClicked_btnTime"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    WidthRequest="100"
-                    HeightRequest="40"
-                    Margin="5"/>
+                        x:Name="btnArea"
+                        Text="Water"
+                        Clicked="Clicked_btnArea"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        BackgroundColor="MediumBlue"
+                        TextColor="White"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        FontSize="10"
+                        Margin="5"/>
 
                 <Button Grid.Column="2"
                         Grid.Row="0"
                         x:Name="btnTemp"
                         Text="Get temp"
                         Clicked="OnCounterClicked_btnTemp"
-                        HorizontalOptions="Start"
+                        HorizontalOptions="Center"
                         VerticalOptions="Center"
+                        BackgroundColor="Black"
+                        TextColor="White"
                         WidthRequest="100"
                         HeightRequest="40"
+                        FontSize="10"
                         Margin="5"/>
 
                 <Button Grid.Column="4"
@@ -59,64 +67,247 @@
                         x:Name="btnHumd"
                         Text="Get humd"
                         Clicked="OnCounterClicked_btnHumd"
-                        HorizontalOptions="Start"
+                        HorizontalOptions="Center"
                         VerticalOptions="Center"
+                        BackgroundColor="Black"
+                        TextColor="White"
                         WidthRequest="100"
                         HeightRequest="40"
+                        FontSize="10"
                         Margin="5"/>
 
-
-
-                <Button Grid.Column="0"
+                <Entry Grid.Column="0"
                         Grid.Row="2"
-                        x:Name="btnMotor"
-                        Text="Motor"
-                        Clicked="OnCounterClicked_btnMotor"
-                        BackgroundColor="Gray"
-                        HorizontalOptions="Start"
+                        x:Name="entInterval"
+                        Keyboard="Numeric"
+                        Text="10"
+                        HorizontalOptions="Center"
                         VerticalOptions="Center"
+                        BackgroundColor="LightSkyBlue"
+                        TextColor="Black"
+                        HorizontalTextAlignment="Center"
                         WidthRequest="100"
                         HeightRequest="40"
-                        Margin="5"/>
+                        FontSize="10"
+                        Margin="5"
+                        TextChanged="TextChange_entInterval"
+                        />
 
                 <Button Grid.Column="2"
                         Grid.Row="2"
-                        x:Name="btnBuzzer"
-                        Text="Buzzer"
-                        Clicked="OnCounterClicked_btnBuzzer"
-                        BackgroundColor="Gray"
-                        HorizontalOptions="Start"
+                        x:Name="btnNow"
+                        Text="Now"
+                        Clicked="Clicked_btnNow"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        HorizontalOptions="Center"
                         VerticalOptions="Center"
                         WidthRequest="100"
                         HeightRequest="40"
+                        FontSize="10"
                         Margin="5"/>
 
+                <Button Grid.Column="4"
+                        Grid.Row="2"
+                        x:Name="btnSetInterval"
+                        Text="Set interbal"
+                        Clicked="Click_btnSetInterval"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        FontSize="10"
+                        Margin="5"/>
+                
+                <Button Grid.Column="0"
+                        Grid.Row="4"
+                        x:Name="btnDirection"
+                        Text="Right"
+                        Clicked="Click_btnDirection"
+                        BackgroundColor="Orange"
+                        TextColor="Black"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        FontSize="10"
+                        Margin="5"/>
+
+                <Button Grid.Column="0"
+                        Grid.Row="6"
+                        x:Name="btnBoolean"
+                        Text="false"
+                        Clicked="Click_btnBoolean"
+                        BackgroundColor="SteelBlue"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        FontSize="10"
+                        Margin="5"/>
+
+                <Button Grid.Column="2"
+                        Grid.Row="4"
+                        x:Name="btnAdjust"
+                        Text="Adjust"
+                        Clicked="Click_btnAdjust"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        FontSize="10"
+                        Margin="5"/>
+
+                <Button Grid.Column="4"
+                        Grid.Row="4"
+                        x:Name="btnSetInterval0"
+                        Text="Interval 0"
+                        Clicked="OnCounterClicked_btnSetInterval0"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        FontSize="10"
+                        Margin="5"/>
 
                 <Button Grid.Column="4"
                         Grid.Row="6"
+                        x:Name="btnSetRing"
+                        Text="set ring"
+                        Clicked="Clicked_btnSetRing"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        FontSize="10"
+                        Margin="5"/>
+                
+                <Button Grid.Column="4"
+                        Grid.Row="8"
+                        x:Name="btnGetRing"
+                        Text="get ring"
+                        Clicked="Clicked_btnGetRing"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        FontSize="10"
+                        Margin="5"/>
+
+                <Button Grid.Column="0"
+                        Grid.Row="8"
+                        x:Name="btnGetMelody"
+                        Text="get melody"
+                        Clicked="Clicked_btnGetMelody"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        FontSize="10"
+                        Margin="5"/>
+
+                <Button Grid.Column="2"
+                        Grid.Row="8"
+                        x:Name="btnGetInterval"
+                        Text="get interval"
+                        Clicked="Clicked_btnGetInterval"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        FontSize="10"
+                        Margin="5"/>
+
+                <Button Grid.Column="2"
+                        Grid.Row="10"
+                        x:Name="btnGetNext"
+                        Text="get next"
+                        Clicked="Clicked_btnGetNext"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        FontSize="10"
+                        Margin="5"/>
+
+                <Button Grid.Column="4"
+                        Grid.Row="10"
                         x:Name="btnDebug"
                         Text="debug"
                         Clicked="OnCounterClicked_btnDebug"
-                        HorizontalOptions="Start"
+                        HorizontalOptions="Center"
                         VerticalOptions="Center"
+                        BackgroundColor="Black"
+                        TextColor="White"
                         WidthRequest="100"
                         HeightRequest="40"
+                        FontSize="10"
                         Margin="5"/>
-
-
-
             </Grid>
 
-            <Label Grid.Row="5"
+            <Label Grid.Row="2"
                    Text="【Log】"
                    Margin="5, 0"/>
-            <ScrollView Grid.Row="6" x:Name="svLog" BackgroundColor="White" Margin="10, 0">
+            <ScrollView Grid.Row="3" x:Name="svLog" BackgroundColor="White" Margin="0, 0">
                 <Label 
                     x:Name="lblValue"
                     Text=""
+                    FontSize="14"
                     TextColor="Black"
-                    Margin="5"/>
+                    BackgroundColor="LightBlue"
+                    Margin="2"/>
             </ScrollView>
+
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0"
+                        x:Name="btnLogClear"
+                        Text="Log clear"
+                        Clicked="OnCounterClicked_btnLogClear"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        FontSize="10"
+                        Margin="5"/>
+
+                <Button Grid.Column="2"
+                        x:Name="btnLogCopy"
+                        Text="Log copy"
+                        Clicked="OnCounterClicked_btnLogCopy"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        FontSize="10"
+                        Margin="5"/>
+            </Grid>
         </Grid>
     </Frame>
 

@@ -264,7 +264,6 @@ C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\bin\Debug\net6.0
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\hostfxr.dll
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\hostpolicy.dll
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\mscordaccore.dll
-C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\mscordaccore_amd64_amd64_6.0.822.36306.dll
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\mscordbi.dll
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\mscorrc.dll
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\msquic.dll
@@ -345,3 +344,19 @@ C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\MauiCtrl.dll
 C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\MauiCtrl.pdb
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\mscordaccore_amd64_amd64_6.0.1122.52304.dll
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png
+C:\Users\barnet\Documents\_bnt\_sn\!git\maui_test\Hct101\Hct101\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png
