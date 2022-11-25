@@ -131,9 +131,11 @@ public partial class MainPage : ContentPage
     //************************************************************************************
     private async void OnCounterClicked_btnDebug(object sender, EventArgs e)
     {
-        //string strUrl = "http://petoasis.airport/get" + "?item=dq";
-        //while (common.blAccessing) ;
-        //accessHtml(strUrl);
+        string strArea = "w";
+        if (btnBoolean.Text == "Food") strArea = "f";
+        string strUrl = "http://petoasis.airport/get" + $"?target={strArea}&item=all";
+        while (common.blAccessing) ;
+        accessHtml(strUrl);
     }
 
 
