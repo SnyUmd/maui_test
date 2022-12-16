@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ActiveDebugFramework>net6.0-android</ActiveDebugFramework>
     <IsFirstTimeProjectOpen>False</IsFirstTimeProjectOpen>
-    <ActiveDebugProfile>Pixel 3 - API 31 (1) (Android 12.0 - API 31)</ActiveDebugProfile>
+    <ActiveDebugProfile>Samsung SC-54A (Android 12.0 - API 31)</ActiveDebugProfile>
     <SelectedPlatformGroup>Emulator</SelectedPlatformGroup>
     <DefaultDevice>pixel_3_-_api_31_1</DefaultDevice>
   </PropertyGroup>
