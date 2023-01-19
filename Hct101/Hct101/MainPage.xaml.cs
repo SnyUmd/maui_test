@@ -325,7 +325,7 @@ public partial class MainPage : ContentPage
     {
         string strArea = "w";
         string strVal = "false";
-        if (btnBoolean.Text == "Food") strArea = "f";
+        if (btnArea.Text == "Food") strArea = "f";
         if (btnBoolean.Text == "true") strVal = "true";
         string strUrl = common.aryHtml[(int)enmHtml.set] + $"?target={strArea}&ring={strVal}";
         //await DisplayAlert("", strUrl, "OK");
