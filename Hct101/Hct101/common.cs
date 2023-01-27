@@ -27,6 +27,7 @@ namespace Hct101
         {
             "http://petoasis.airport/get?item=temperture",
             "http://petoasis.airport/get?item=humidity",
+            "http://petoasis.airport/get?item=time",
             "http://petoasis.airport/get?sts=all",
             "http://petoasis.airport/set",
             "http://petoasis.airport/adjust",
@@ -38,6 +39,7 @@ namespace Hct101
     {
         temp,
         humd,
+        time,
         all,
         set,
         adjust,

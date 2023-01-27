@@ -6,12 +6,15 @@ namespace Hct101;
 
 using System;
 using System.Net;
-using MauiCtrl;
+//using MauiCtrl;
 
-using System.Threading.Tasks;
-using System.Threading;
-using System.Timers;
-using taskTimers = System.Timers;
+//using System.Threading.Tasks;
+//using System.Threading;
+//using System.Timers;
+//using taskTimers = System.Timers;
+//using Android.Widget;
+
+
 //using AndroidX.Emoji2.Text.FlatBuffer;
 
 public partial class MainPage : ContentPage
@@ -41,6 +44,7 @@ public partial class MainPage : ContentPage
 #if INTERVAL
         Task.Run(() => runTask(this));
 #endif
+        NavigationPage.SetHasNavigationBar(this, false);
     }
 
     void writeLog(string val)
@@ -101,19 +105,6 @@ public partial class MainPage : ContentPage
     }
 
 
-    //************************************************************************************
-    //************************************************************************************
-    //************************************************************************************
-    private void OnCounterClicked_btnTemp(object sender, EventArgs e)
-    {
-        //while (common.blAccessing) ;
-        //common.blAccessing = true;
-        //System.Threading.Thread.Sleep(100);
-        //writeLog($"Tx : {common.aryHtml[(int)enmHtml.temp]}\n");
-        //string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.temp]);
-        //writeLog($"Rx : {val}\n\n");
-        //common.blAccessing = false;
-    }
 
     //************************************************************************************
     private void OnCounterClicked_btnHumd(object sender, EventArgs e)
@@ -139,41 +130,6 @@ public partial class MainPage : ContentPage
     }
 
 
-    //************************************************************************************
-    private void OnCounterClicked_btnSetInterval10(object sender, EventArgs e)
-    {
-        //while (common.blAccessing) ;
-        //common.blAccessing = true;
-        //System.Threading.Thread.Sleep(100);
-        //writeLog($"Tx : {common.aryHtml[(int)enmHtml.set_interval10]}\n");
-        //string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.set_interval10]);
-        //writeLog($"Rx : {val}\n\n");
-        //common.blAccessing = false;
-    }
-
-    //************************************************************************************
-    private void OnCounterClicked_btnSetInterval5(object sender, EventArgs e)
-    {
-        //while (common.blAccessing) ;
-        //common.blAccessing = true;
-        //System.Threading.Thread.Sleep(100);
-        //writeLog($"Tx : {common.aryHtml[(int)enmHtml.set_interval5]}\n");
-        //string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.set_interval5]);
-        //writeLog($"Rx : {val}\n\n");
-        //common.blAccessing = false;
-    }
-
-    //************************************************************************************
-    private void OnCounterClicked_btnSetInterval20(object sender, EventArgs e)
-    {
-        //while (common.blAccessing) ;
-        //common.blAccessing = true;
-        //System.Threading.Thread.Sleep(100);
-        //writeLog($"Tx : {common.aryHtml[(int)enmHtml.set_interval20]}\n");
-        //string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.set_interval20]);
-        //writeLog($"Rx : {val}\n\n");
-        //common.blAccessing = false;
-    }
 
     //************************************************************************************
     private void OnCounterClicked_btnSetInterval0(object sender, EventArgs e)
@@ -186,29 +142,6 @@ public partial class MainPage : ContentPage
         accessHtml(strUrl);
     }
 
-    //************************************************************************************
-    private void OnCounterClicked_btnAdjustW(object sender, EventArgs e)
-    {
-        //while (common.blAccessing) ;
-        //common.blAccessing = true;
-        //System.Threading.Thread.Sleep(100);
-        //writeLog($"Tx : {common.aryHtml[(int)enmHtml.adjust_w]}\n");
-        //string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.adjust_w]);
-        //writeLog($"Rx : {val}\n\n");
-        //common.blAccessing = false;
-    }
-
-    //************************************************************************************
-    private void OnCounterClicked_btnAdjustF(object sender, EventArgs e)
-    {
-        //while (common.blAccessing) ;
-        //common.blAccessing = true;
-        //System.Threading.Thread.Sleep(100);
-        //writeLog($"Tx : {common.aryHtml[(int)enmHtml.adjust_f]}\n");
-        //string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.adjust_f]);
-        //writeLog($"Rx : {val}\n\n");
-        //common.blAccessing = false;
-    }
 
     //************************************************************************************
     private void Clicked_btnArea(object sender, EventArgs e)
@@ -368,11 +301,33 @@ public partial class MainPage : ContentPage
     {
         Clipboard.SetTextAsync(lblValue.Text);
     }
+
+//************************************************************************************
+    private void OnCounterClicked_btnTime(object sender, EventArgs e)
+    {
+        common.blAccessing = true;
+        writeLog($"Tx : {common.aryHtml[(int)enmHtml.time]}\n");
+        string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.time]);
+        writeLog($"Rx : {val}\n\n");
+        common.blAccessing = false;
+
+    }
+
+//************************************************************************************
+    private void OnCounterClicked_btnTemp(object sender, EventArgs e)
+    {
+        while (common.blAccessing) ;
+        common.blAccessing = true;
+        System.Threading.Thread.Sleep(100);
+        writeLog($"Tx : {common.aryHtml[(int)enmHtml.temp]}\n");
+        string val = HC.getHtml(wc, common.aryHtml[(int)enmHtml.temp]);
+        writeLog($"Rx : {val}\n\n");
+        common.blAccessing = false;
+    }
 }
 
 
 
-//************************************************************************************
 
 
 
