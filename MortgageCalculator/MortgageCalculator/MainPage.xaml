@@ -9,115 +9,119 @@
             Padding="50,0"
             VerticalOptions="Center">
             <Frame Padding="20">
-                <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*"
-                      HeightRequest="500" RowSpacing="10">
-                    <!--価格-->
-                    <Label
-                        Grid.Row="0" Grid.Column="0"
-                        Text="借入価格"
-                        VerticalOptions="Center"
-                        Padding="20, 10"
-                        HorizontalTextAlignment="End"/>
-                    <Entry
-                        x:Name="LoanPrice"
-                        Grid.Row="0" Grid.Column="1"
-                        Text="3000"
-                        HorizontalTextAlignment="End"
-                        Keyboard="Url"/>
-                    <Label
-                        Grid.Row="0" Grid.Column="2"
-                        Text="万円"
-                        VerticalOptions="Center"
-                        Padding="10,10"/>
+                <Grid RowDefinitions="*,*"
+                      HeightRequest="300" RowSpacing="10">
+                    <Grid Grid.Row="0" ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*">
+                        <!--価格-->
+                        <Label
+                            Grid.Row="0" Grid.Column="0"
+                            Text="借入価格"
+                            VerticalOptions="Center"
+                            Padding="20, 10"
+                            HorizontalTextAlignment="End"/>
+                        <Entry
+                            x:Name="LoanPrice"
+                            Grid.Row="0" Grid.Column="1"
+                            Text="3000"
+                            HorizontalTextAlignment="End"
+                            Keyboard="Url"/>
+                        <Label
+                            Grid.Row="0" Grid.Column="2"
+                            Text="万円"
+                            VerticalOptions="Center"
+                            Padding="10,10"/>
 
-                    <!--金利-->
-                    <Label
-                        Grid.Row="1" Grid.Column="0"
-                        Text="金利"
-                        VerticalOptions="Center"
-                        Padding="20, 10"
-                        HorizontalTextAlignment="End"/>
-                    <Entry
-                        x:Name="InterestRate"
-                        Grid.Row="1" Grid.Column="1"
-                        Keyboard="Url"
-                        Text="1"
-                        HorizontalTextAlignment="End"
-                        TextChanged="TextChanged"/>
-                    <Label
-                        Grid.Row="1" Grid.Column="2"
-                        Text="%"
-                        VerticalOptions="Center"
-                        Padding="10,10"/>
+                        <!--金利-->
+                        <Label
+                            Grid.Row="1" Grid.Column="0"
+                            Text="金利"
+                            VerticalOptions="Center"
+                            Padding="20, 10"
+                            HorizontalTextAlignment="End"/>
+                        <Entry
+                            x:Name="InterestRate"
+                            Grid.Row="1" Grid.Column="1"
+                            Keyboard="Url"
+                            Text="1"
+                            HorizontalTextAlignment="End"
+                            TextChanged="TextChanged"/>
+                        <Label
+                            Grid.Row="1" Grid.Column="2"
+                            Text="%"
+                            VerticalOptions="Center"
+                            Padding="10,10"/>
 
-                    <!--年数-->
-                    <Label
-                        Grid.Row="2" Grid.Column="0"
-                        Text="返済年数"
-                        VerticalOptions="Center"
-                        Padding="20, 10"
-                        HorizontalTextAlignment="End"/>
-                    <Entry
-                        x:Name="YearsOfRepayment"
-                        Grid.Row="2" Grid.Column="1"
-                        Text="30"
-                        HorizontalTextAlignment="End"
-                        Keyboard="Url"
-                        TextChanged="TextChanged"/>
-                    <Label
-                        Grid.Row="2" Grid.Column="2"
-                        Text="年"
-                        VerticalOptions="Center"
-                        Padding="10,10"/>
+                        <!--年数-->
+                        <Label
+                            Grid.Row="2" Grid.Column="0"
+                            Text="返済年数"
+                            VerticalOptions="Center"
+                            Padding="20, 10"
+                            HorizontalTextAlignment="End"/>
+                        <Entry
+                            x:Name="YearsOfRepayment"
+                            Grid.Row="2" Grid.Column="1"
+                            Text="30"
+                            HorizontalTextAlignment="End"
+                            Keyboard="Url"
+                            TextChanged="TextChanged"/>
+                        <Label
+                            Grid.Row="2" Grid.Column="2"
+                            Text="年"
+                            VerticalOptions="Center"
+                            Padding="10,10"/>
+                    </Grid>
+                    <Image Grid.Row="1"/>
                 </Grid>
-                <!--<Grid RowDefinitions="*, 5*"
-                      HeightRequest="200" RowSpacing="10">
-                </Grid>
-                --><!--ローンタイプ-->
+                <!--ローンタイプ-->
                 <!--空白--><!--
 
 
-                <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*"
-                      HeightRequest="500" RowSpacing="10">
-                    --><!--A年齢--><!--
+                -->
+            </Frame>
+
+            <Frame>
+                <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*"
+                      HeightRequest="100" RowSpacing="10">
+                    <!--A年齢-->
                     <Label
-                        Grid.Row="5" Grid.Column="0"
+                        Grid.Row="0" Grid.Column="0"
                         Text="A年齢"
                         VerticalOptions="Center"
                         Padding="20, 10"
                         HorizontalTextAlignment="End"/>
                     <Entry
                         x:Name="AgeA"
-                        Grid.Row="5" Grid.Column="1"
+                        Grid.Row="0" Grid.Column="1"
                         Text="20"
                         Keyboard="Numeric"
                         HorizontalTextAlignment="End"
                         TextChanged="TextChanged"/>
                     <Label
-                        Grid.Row="5" Grid.Column="2"
+                        Grid.Row="0" Grid.Column="2"
                         Text="歳"
                         VerticalOptions="Center"
                         Padding="10,10"/>
-                    --><!--B年齢--><!--
+                    <!--B年齢-->
                     <Label
-                        Grid.Row="6" Grid.Column="0"
+                        Grid.Row="1" Grid.Column="0"
                         Text="B年齢"
                         VerticalOptions="Center"
                         Padding="20, 10"
                         HorizontalTextAlignment="End"/>
                     <Entry
                         x:Name="AgeB"
-                        Grid.Row="6" Grid.Column="1"
+                        Grid.Row="1" Grid.Column="1"
                         Text="20"
                         Keyboard="Numeric"
                         HorizontalTextAlignment="End"
                         TextChanged="TextChanged"/>
                     <Label
-                        Grid.Row="6" Grid.Column="2"
+                        Grid.Row="1" Grid.Column="2"
                         Text="歳"
                         VerticalOptions="Center"
                         Padding="10,10"/>
-                </Grid>-->
+                </Grid>
             </Frame>
             <Button
                 x:Name="CounterBtn"
