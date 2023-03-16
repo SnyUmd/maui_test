@@ -49,7 +49,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\equal_amount_of_principal.png" />
+	  <None Remove="Resources\Images\equal_principal_and_interest.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="MauiCtrl">
+	    <HintPath>..\..\..\MauiCtrl\MauiCtrl\MauiCtrl\bin\Debug\net6.0-windows10.0.19041.0\MauiCtrl.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 
 </Project>
