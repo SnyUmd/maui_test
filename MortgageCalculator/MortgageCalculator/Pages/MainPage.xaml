@@ -29,15 +29,21 @@
                         Padding="20, 0"
                         TextColor="Black"
                         HorizontalTextAlignment="End"/>
-                    <Entry
-                        x:Name="EntryLoanPrice"
-                        Grid.Row="0" Grid.Column="1"
-                        Text="3000"
-                        TextColor="Black"
-                        PlaceholderColor="Black"
-                        BackgroundColor="LightGray"
-                        HorizontalTextAlignment="End"
-                        Keyboard="Numeric"/>
+                    <Border Grid.Row="0" Grid.Column="1"
+                            Stroke="Gray"
+                            BackgroundColor="White"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 5"
+                            Padding="10,0">
+                        <Entry
+                            x:Name="EntryLoanPrice"
+                            Text="3000"
+                            TextColor="Black"
+                            PlaceholderColor="Black"
+                            BackgroundColor="White"
+                            HorizontalTextAlignment="End"
+                            Keyboard="Numeric"/>
+                    </Border>
                     <Label
                         Grid.Row="0" Grid.Column="2"
                         Text="万円"
