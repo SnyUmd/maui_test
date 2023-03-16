@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MortgageCalculator.MainPage"
+             x:Class="MortgageCalculator.Pages.MainPage"
              Title="住宅ローン計算">
 
     <!--<ScrollView>
@@ -19,7 +19,8 @@
                 <Grid Grid.Row="0" 
                         ColumnDefinitions="*,*,*" 
                         RowDefinitions="*,*,*,*"
-                        VerticalOptions="Center">
+                        VerticalOptions="Center"
+                        RowSpacing="5">
                     <!--価格-->
                     <Label
                         Grid.Row="0" Grid.Column="0"
@@ -34,6 +35,7 @@
                         Text="3000"
                         TextColor="Black"
                         PlaceholderColor="Black"
+                        BackgroundColor="LightGray"
                         HorizontalTextAlignment="End"
                         Keyboard="Numeric"/>
                     <Label
@@ -58,6 +60,7 @@
                         Text="1"
                         TextColor="Black"
                         PlaceholderColor="Black"
+                        BackgroundColor="LightGray"
                         HorizontalTextAlignment="End"
                         TextChanged="TextChanged"/>
                     <Label
@@ -81,6 +84,7 @@
                         Text="30"
                         TextColor="Black"
                         PlaceholderColor="Black"
+                        BackgroundColor="LightGray"
                         HorizontalTextAlignment="End"
                         Keyboard="Numeric"
                         TextChanged="TextChanged"/>
@@ -104,6 +108,7 @@
                         Grid.Row="3" Grid.Column="1"
                         TextColor="Black"
                         TitleColor="Black"
+                        BackgroundColor="LightGray"
                         HorizontalTextAlignment="Center"
                         SelectedIndexChanged="SelectedIndexChange_PickerType"/>
 
@@ -136,6 +141,7 @@
                     Text="10"
                     TextColor="Black"
                     PlaceholderColor="Black"
+                    BackgroundColor="LightGray"
                     HorizontalTextAlignment="End"
                     Keyboard="Numeric"/>
                 <Label
@@ -153,7 +159,7 @@
                 x:Name="Grid2"
                 Grid.Row="2"
                 ColumnDefinitions="*,*,*" RowDefinitions="*,*,*"
-                RowSpacing="10" VerticalOptions="Center">
+                RowSpacing="5" VerticalOptions="Center">
 
                 <!--A年齢-->
                 <Label
@@ -169,6 +175,7 @@
                     Text="20"
                     TextColor="Black"
                     PlaceholderColor="Black"
+                    BackgroundColor="LightGray"
                     Keyboard="Numeric"
                     HorizontalTextAlignment="End"
                     TextChanged="TextChanged"/>
@@ -192,6 +199,7 @@
                     Text="20"
                     TextColor="Black"
                     PlaceholderColor="Black"
+                    BackgroundColor="LightGray"
                     Keyboard="Numeric"
                     HorizontalTextAlignment="End"
                     TextChanged="TextChanged"/>
@@ -215,6 +223,7 @@
                     Text="1"
                     TextColor="Black"
                     PlaceholderColor="Black"
+                    BackgroundColor="LightGray"
                     Keyboard="Numeric"
                     HorizontalTextAlignment="End"
                     TextChanged="TextChanged"/>

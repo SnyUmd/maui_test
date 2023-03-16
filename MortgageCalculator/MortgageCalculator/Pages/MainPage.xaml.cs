@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using MauiCtrl;
 using System.Diagnostics;
 
-namespace MortgageCalculator;
+namespace MortgageCalculator.Pages;
 
 public partial class MainPage : ContentPage
 {
