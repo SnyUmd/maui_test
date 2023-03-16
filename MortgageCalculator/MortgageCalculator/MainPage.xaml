@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MortgageCalculator.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="50,0"
+            VerticalOptions="Center">
+            <Frame Padding="20">
+                <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*"
+                      HeightRequest="300" RowSpacing="10">
+    <!--価格-->
+                    <Label
+                        Grid.Row="0" Grid.Column="0"
+                        Text="借入価格"
+                        VerticalOptions="Center"
+                        Padding="20, 10"
+                        HorizontalTextAlignment="End"/>
+                    <Entry
+                        x:Name="LoanPrice"
+                        Grid.Row="0" Grid.Column="1"
+                        Keyboard="Url"/>
+                    <Label
+                        Grid.Row="0" Grid.Column="2"
+                        Text="万円"
+                        VerticalOptions="Center"
+                        Padding="10,10"/>
+
+    <!--金利-->
+                    <Label
+                        Grid.Row="1" Grid.Column="0"
+                        Text="金利"
+                        VerticalOptions="Center"
+                        Padding="20, 10"
+                        HorizontalTextAlignment="End"/>
+                    <Entry
+                        x:Name="InterestRate"
+                        Grid.Row="1" Grid.Column="1"
+                        Keyboard="Url"
+                        TextChanged="TextChanged"/>
+                    <Label
+                        Grid.Row="1" Grid.Column="2"
+                        Text="%"
+                        VerticalOptions="Center"
+                        Padding="10,10"/>
+
+    <!--年数-->
+                    <Label
+                        Grid.Row="2" Grid.Column="0"
+                        Text="返済年数"
+                        VerticalOptions="Center"
+                        Padding="20, 10"
+                        HorizontalTextAlignment="End"/>
+                    <Entry
+                        x:Name="YearsOfRepayment"
+                        Grid.Row="2" Grid.Column="1"
+                        Keyboard="Url"
+                        TextChanged="TextChanged"/>
+                    <Label
+                        Grid.Row="2" Grid.Column="2"
+                        Text="年"
+                        VerticalOptions="Center"
+                        Padding="10,10"/>
+
+                    <!--空白-->
+                    
+                    <!--A年齢-->
+                    <Label
+                        Grid.Row="4" Grid.Column="0"
+                        Text="A年齢"
+                        VerticalOptions="Center"
+                        Padding="20, 10"
+                        HorizontalTextAlignment="End"/>
+                    <Entry
+                        x:Name="AgeA"
+                        Grid.Row="4" Grid.Column="1"
+                        Text="20"
+                        Keyboard="Numeric"
+                        TextChanged="TextChanged"/>
+                    <Label
+                        Grid.Row="4" Grid.Column="2"
+                        Text="歳"
+                        VerticalOptions="Center"
+                        Padding="10,10"/>
+                    <!--B年齢-->
+                    <Label
+                        Grid.Row="5" Grid.Column="0"
+                        Text="B年齢"
+                        VerticalOptions="Center"
+                        Padding="20, 10"
+                        HorizontalTextAlignment="End"/>
+                    <Entry
+                        x:Name="AgeB"
+                        Grid.Row="5" Grid.Column="1"
+                        Text="20"
+                        Keyboard="Numeric"
+                        TextChanged="TextChanged"/>
+                    <Label
+                        Grid.Row="5" Grid.Column="2"
+                        Text="歳"
+                        VerticalOptions="Center"
+                        Padding="10,10"/>
+                </Grid>
+            </Frame>
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
