@@ -18,6 +18,8 @@ public partial class MainPage : ContentPage
 #endif
         SetPickerItems();
         Frame0.HeightRequest = Grid0.Height;
+        Frame1.HeightRequest = Grid1.Height;
+        Frame2.HeightRequest = Grid2.Height;
 
     }
 
