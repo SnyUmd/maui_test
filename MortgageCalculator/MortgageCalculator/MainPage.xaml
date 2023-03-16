@@ -164,7 +164,7 @@
                     Padding="20, 10"
                     HorizontalTextAlignment="End"/>
                 <Entry
-                    x:Name="AgeA"
+                    x:Name="EntryAgeA"
                     Grid.Row="0" Grid.Column="1"
                     Text="20"
                     TextColor="Black"
@@ -187,7 +187,7 @@
                     Padding="20, 10"
                     HorizontalTextAlignment="End"/>
                 <Entry
-                    x:Name="AgeB"
+                    x:Name="EntryAgeB"
                     Grid.Row="1" Grid.Column="1"
                     Text="20"
                     TextColor="Black"
@@ -210,7 +210,7 @@
                     Padding="20, 10"
                     HorizontalTextAlignment="End"/>
                 <Entry
-                    x:Name="AgeC"
+                    x:Name="EntryAgeC"
                     Grid.Row="2" Grid.Column="1"
                     Text="1"
                     TextColor="Black"
@@ -230,13 +230,13 @@
         <!--********************************************-->
 
         <Button
-                x:Name="CounterBtn"
+                x:Name="BtnCal"
                 Grid.Row="3"
                 Text="Click me"
                 TextColor="White"
                 BackgroundColor="Coral"
                 SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"/>
+                Clicked="ClickedBtnCal"/>
     </Grid>
         <!--</VerticalStackLayout>
     </ScrollView>-->
