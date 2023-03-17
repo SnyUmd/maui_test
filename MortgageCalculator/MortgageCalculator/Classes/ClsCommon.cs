@@ -52,9 +52,9 @@ namespace MortgageCalculator.Classes
         public int YearsOfRepayment;//返済年数
         public int RepaymentType;   //返済タイプ
         public double Saving;          //貯金
-        public int? AgeA;
-        public int? AgeB;
-        public int? AgeC;
+        public int AgeA;
+        public int AgeB;
+        public int AgeC;
 
         public ClsStatus()
         {

@@ -86,11 +86,11 @@ public partial class MainPage : ContentPage
         actionChangeTypeImage(PickerType.SelectedIndex);
 
         //umd仕様
-        EntryLoanPrice.Text = "3000";
-        EntryInterestRate.Text = "1.2";
-        EntryYearsOfRepayment.Text = "30";
+        EntryLoanPrice.Text = "4000";
+        EntryInterestRate.Text = "1.5";
+        EntryYearsOfRepayment.Text = "35";
         PickerType.SelectedIndex = 0;
-        EntrySaving.Text = "10";
+        EntrySaving.Text = "17";
         EntryAgeA.Text = "42";
         EntryAgeB.Text = "51";
         EntryAgeC.Text = "";
