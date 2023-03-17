@@ -63,4 +63,10 @@
 	  </Reference>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Update="Pages\ResultPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

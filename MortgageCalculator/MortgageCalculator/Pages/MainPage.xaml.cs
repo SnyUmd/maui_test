@@ -8,11 +8,12 @@ namespace MortgageCalculator.Pages;
 public partial class MainPage : ContentPage
 {
 	int count = 0;
+    Action<int> actionChangeTypeImage;
 
-	public MainPage()
+    public MainPage()
 	{
 		InitializeComponent();
-		//this.WidthRequest = 500;
+        BindingContext = new VM.VM_StatusName();
 		ClsDebug.DebugWriteLine(ClsCommon.CURRENT_DIRECTRY);
 
         //標準ナビバー非表示
@@ -21,15 +22,17 @@ public partial class MainPage : ContentPage
         ClsDebug.DebugWriteLine(ClsCommon.LOCAL_APP_DATA);
 #endif
 
-        Frame0.HeightRequest = Grid0.Height;
-        Frame1.HeightRequest = Grid1.Height;
-        Frame2.HeightRequest = Grid2.Height;
+        actionChangeTypeImage = (a) => ImageType.Source = ClsCommon.ImageDataSources[a];
+
+        //Frame0.HeightRequest = Grid0.Height;
+        //Frame1.HeightRequest = Grid1.Height;
+        //Frame2.HeightRequest = Grid2.Height;
 
         SetInit();
     }
 
     //*******************************************************************
-    private void ClickedBtnCal(object sender, EventArgs e)
+    private async void ClickedBtnCal(object sender, EventArgs e)
     {
         ClsCommon.LoanStatus = GetLoanStatus();
 
@@ -41,6 +44,8 @@ public partial class MainPage : ContentPage
         Debug.WriteLine($"年齢A：{ClsCommon.LoanStatus.AgeA} 歳");
         Debug.WriteLine($"年齢B：{ClsCommon.LoanStatus.AgeB} 歳");
         Debug.WriteLine($"年齢C：{ClsCommon.LoanStatus.AgeC} 歳");
+
+        await Navigation.PushAsync(new Pages.ResultPage());
     }
 
     //*******************************************************************
@@ -63,7 +68,8 @@ public partial class MainPage : ContentPage
     //*******************************************************************
     private void SelectedIndexChange_PickerType(object sender, EventArgs e)
     {
-        selectTypeImage(PickerType.SelectedIndex);
+        //selectTypeImage(PickerType.SelectedIndex);
+        actionChangeTypeImage(PickerType.SelectedIndex);
 
     }
 
@@ -72,15 +78,16 @@ public partial class MainPage : ContentPage
     {
         //ピッカーの選択項目をセット
         var listLoanTypes = new List<string>();
-        listLoanTypes.Add("元金均等返済");
-        listLoanTypes.Add("元利均等返済");
+        listLoanTypes.Add(ClsCommon.LoanText[0]);
+        listLoanTypes.Add(ClsCommon.LoanText[1]);
         PickerType.ItemsSource = listLoanTypes;
         PickerType.SelectedIndex = 0;
-        selectTypeImage(PickerType.SelectedIndex);
+        //selectTypeImage(PickerType.SelectedIndex);
+        actionChangeTypeImage(PickerType.SelectedIndex);
 
         //umd仕様
-        EntryLoanPrice.Text = "4000";
-        EntryInterestRate.Text = "1";
+        EntryLoanPrice.Text = "3000";
+        EntryInterestRate.Text = "1.2";
         EntryYearsOfRepayment.Text = "30";
         PickerType.SelectedIndex = 0;
         EntrySaving.Text = "10";
@@ -90,24 +97,27 @@ public partial class MainPage : ContentPage
     }
 
     //*******************************************************************
-    private void selectTypeImage(int num)
-    {
-        ImageType.Source = ClsCommon.ImageDataSources[num];
-    }
+    //private void selectTypeImage(int num)
+    //{
+    //    ImageType.Source = ClsCommon.ImageDataSources[num];
+    //}
 
     //*******************************************************************
-    private ClsCommon.Status GetLoanStatus()
+    private ClsStatus GetLoanStatus()
     {
-        ClsCommon.Status resultStatus = new();
+        ClsStatus resultStatus = new();
 
-        resultStatus.LoanPrice = int.Parse(EntryLoanPrice.Text);
-        resultStatus.InterestRate = int.Parse(EntryInterestRate.Text);
+        resultStatus.LoanPrice = double.Parse(EntryLoanPrice.Text);
+        resultStatus.InterestRate = double.Parse(EntryInterestRate.Text);
         resultStatus.YearsOfRepayment = int.Parse(EntryYearsOfRepayment.Text);
         resultStatus.RepaymentType = PickerType.SelectedIndex;
-        resultStatus.Saving = int.Parse(EntrySaving.Text);
-        resultStatus.AgeA = int.Parse(EntryAgeA.Text);
-        resultStatus.AgeB = int.Parse(EntryAgeB.Text);
-        resultStatus.AgeC = int.Parse(EntryAgeC.Text);
+        resultStatus.Saving = double.Parse(EntrySaving.Text);
+        if(EntryAgeA.Text != "")
+            resultStatus.AgeA = int.Parse(EntryAgeA.Text);
+        if(EntryAgeB.Text != "")
+            resultStatus.AgeB = int.Parse(EntryAgeB.Text);
+        if(EntryAgeC.Text != "")
+            resultStatus.AgeC = int.Parse(EntryAgeC.Text);
         
         return resultStatus;
     }

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace MortgageCalculator.Classes
 {
+    //==============================================================================================
+    //==============================================================================================
+    //==============================================================================================
     internal class ClsCommon
     {
-
         public static readonly string CURRENT_DIRECTRY = AppDomain.CurrentDomain.BaseDirectory;
 #if IOS
         // iOSの場合
@@ -18,41 +20,52 @@ namespace MortgageCalculator.Classes
         // Androidの場合
         public static readonly string LOCAL_APP_DATA = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 #endif
-        public struct Status
-        {
-            public int LoanPrice;       //借入価格
-            public int InterestRate;    //金利
-            public int YearsOfRepayment;//返済年数
-            public int RepaymentType;   //返済タイプ
-            public int Saving;          //貯金
-            public int AgeA;
-            public int AgeB;
-            public int AgeC;
 
-            public Status()
-            {
-                LoanPrice = 0;
-                InterestRate = 0;
-                YearsOfRepayment = 0;
-                RepaymentType = 0;
-                Saving = 0;          //貯金
-                AgeA = 0;
-                AgeB = 0;
-                AgeC = 0;
-            }
-        }
-        public static Status LoanStatus = new();
+        public static ClsStatus LoanStatus = new();
 
         public static string[] ImageDataSources =
         {
             "equal_principal_and_interest.png",
             "equal_amount_of_principal.png"
         };
+        public static string[] LoanText =
+        {
+            "元金均等返済",
+            "元利均等返済"
+        };
 
+        //*******************************************************************
         public void Init()
         {
         }
 
     }
 
+
+    //==============================================================================================
+    //==============================================================================================
+    //==============================================================================================
+    public class ClsStatus
+    {
+        public double LoanPrice;       //借入価格
+        public double InterestRate;    //金利
+        public int YearsOfRepayment;//返済年数
+        public int RepaymentType;   //返済タイプ
+        public double Saving;          //貯金
+        public int? AgeA;
+        public int? AgeB;
+        public int? AgeC;
+
+        public ClsStatus()
+        {
+            LoanPrice = 0;
+            InterestRate = 0;
+            YearsOfRepayment = 0;
+            RepaymentType = 0;
+            Saving = 0;          //貯金
+            AgeA = 0;
+            AgeB = 0;
+            AgeC = 0;
+        }
+    }
 }

@@ -8,10 +8,19 @@ namespace MortgageCalculator.Classes
 {
     class ClsValue
     {
-        public int RemainingDebt { get; set; }
-        public int Interest { get; set; }
-        public int PricipalRepayment { get; set; }
-        public int AmountOfPayment { get; set; }
-        public int Sabings { get;set; }
+        public double RemainingDebt { get; set; }      //残債
+        public double RepaymentInterest { get; set; }  //利息
+        public double RepaymentPrincipal { get; set; } //返済元金
+        public double RepaymentAmount { get; set; }    //返済額
+        public double Saving { get;set; }              //貯金
+
+        public ClsValue()
+        {
+            RemainingDebt = 0;
+            RepaymentInterest = 0;
+            RepaymentPrincipal = 0;
+            RepaymentAmount = 0;
+            Saving = 0;
+        }
     }
 }
