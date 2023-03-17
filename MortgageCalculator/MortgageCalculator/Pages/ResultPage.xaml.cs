@@ -23,7 +23,7 @@ public partial class ResultPage : ContentPage
     }
 
     //*******************************************************************
-    private List<string> CalLoan(bool is_interest)
+    private List<string> CalLoan(bool is_repayment_amount)
     {
         List<string> lstResult = new();
         ClsValue clsValue = new();
@@ -39,26 +39,29 @@ public partial class ResultPage : ContentPage
 
         clsValue.RemainingDebt = ClsCommon.LoanStatus.LoanPrice;//残債初期値
 
-        if(is_interest)
+        if(is_repayment_amount)
             clsValue.RepaymentAmount =
-                    fnCalAmount_Interest(ClsCommon.LoanStatus.LoanPrice,
+                    Math.Round(fnCalAmount_Interest(ClsCommon.LoanStatus.LoanPrice,
                                          ClsCommon.LoanStatus.InterestRate,
-                                         ClsCommon.LoanStatus.YearsOfRepayment);
+                                         ClsCommon.LoanStatus.YearsOfRepayment), 4);
+        else
+            clsValue.RepaymentPrincipal = 
+                Math.Round(ClsCommon.LoanStatus.LoanPrice / (ClsCommon.LoanStatus.YearsOfRepayment * 12), 4);
+
 
         for (int i = 0; i < LoopNum; i++)
         {
-            clsValue.RemainingDebt -= previous_month_repayment;//前月分を引く
-            clsValue.Saving += ClsCommon.LoanStatus.Saving;
-            if (is_interest)
+            clsValue.RemainingDebt = Math.Round(clsValue.RemainingDebt - previous_month_repayment, 4);//前月分を引く
+            clsValue.Saving = Math.Round(clsValue.Saving + ClsCommon.LoanStatus.Saving, 4);
+            if (is_repayment_amount)
             {
-                clsValue.RepaymentInterest = clsValue.RemainingDebt * (ClsCommon.LoanStatus.InterestRate / 100 / 12);
-                clsValue.RepaymentPrincipal = clsValue.RepaymentAmount - clsValue.RepaymentInterest;
+                clsValue.RepaymentInterest = Math.Round(clsValue.RemainingDebt * (ClsCommon.LoanStatus.InterestRate / 100 / 12), 4);
+                clsValue.RepaymentPrincipal = Math.Round(clsValue.RepaymentAmount - clsValue.RepaymentInterest, 4);
             }
             else
             {
-                clsValue.RepaymentInterest = clsValue.RemainingDebt * ClsCommon.LoanStatus.InterestRate / 100 / 12;
-                clsValue.RepaymentPrincipal = clsValue.RemainingDebt / (ClsCommon.LoanStatus.YearsOfRepayment * 12);
-                clsValue.RepaymentAmount = clsValue.RepaymentInterest + clsValue.RepaymentPrincipal;
+                clsValue.RepaymentInterest = Math.Round(clsValue.RemainingDebt * ClsCommon.LoanStatus.InterestRate / 100 / 12, 4);
+                clsValue.RepaymentAmount = Math.Round(clsValue.RepaymentInterest + clsValue.RepaymentPrincipal, 4);
             }
 
             //経過
