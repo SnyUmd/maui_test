@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MortgageCalculator.Classes
 {
-    class ClsValue
+    public class ClsValue
     {
         public int Year { get; set; }
         public int Month { get; set; }

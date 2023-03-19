@@ -1,13 +1,42 @@
 using MauiCtrl;
 using MortgageCalculator.Classes;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Text.Json;
 
 namespace MortgageCalculator.Pages;
 
+public class ResultPageVM: ContentPage
+{
+    public ObservableCollection<ClsValue> Values { get; set; } = new ObservableCollection<ClsValue>();
+
+    public ResultPageVM()
+    {
+        Values.Add(new ClsValue
+        {
+            Year = 0,
+            Month =0,
+            RemainingDebt = 0,
+            RepaymentInterest = 0,
+            RepaymentPrincipal = 0,
+            RepaymentAmount = 0,
+            Saving = 0,
+            AgeA = 0,
+            AgeB = 0,
+            AgeC = 0
+        }) ;
+    }
+    public static void SetValueContextView()
+    {
+
+    }
+}
+
 public partial class ResultPage : ContentPage
 {
-	public ResultPage()
+    
+	
+    public ResultPage()
 	{
 		InitializeComponent();
 		BindingContext = new VM.VM_StatusName();
@@ -20,6 +49,9 @@ public partial class ResultPage : ContentPage
         LabelAgeA.Text = ClsCommon.LoanStatus.AgeA.ToString();
         LabelAgeB.Text = ClsCommon.LoanStatus.AgeB.ToString();
         LabelAgeC.Text = ClsCommon.LoanStatus.AgeC.ToString();
+
+        BindingContext = new ResultPageVM();
+
     }
 
     //*******************************************************************
