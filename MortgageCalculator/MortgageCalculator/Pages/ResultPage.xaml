@@ -11,6 +11,7 @@
                       RowDefinitions="Auto,Auto,Auto,Auto,Auto"
                       ColumnSpacing="15" RowSpacing="5">
                     
+                    <!--****************************************************-->
                     <!--0 借入価格-->
                     <Label
                         Grid.Row="0" Grid.Column="0"
@@ -50,7 +51,7 @@
                     <!--返済年数-->
                     <Label
                         Grid.Row="2" Grid.Column="0"
-                        Text="{Binding YEAR_OF_REPAYMENT}"
+                        Text="{Binding YEAR_OF_REPAYMENT1}"
                         FontSize="16"
                         TextColor="Black"
                         VerticalOptions="Center"
@@ -98,8 +99,8 @@
                         TextColor="Black"
                         HorizontalTextAlignment="Start"/>
                 </Grid>
-                
-                <!--********************************-->
+
+                <!--****************************************************-->
                 <Grid Grid.Column="1" 
                       ColumnDefinitions="*,*" 
                       RowDefinitions="Auto,Auto,Auto,Auto,Auto"
@@ -121,7 +122,7 @@
                         VerticalOptions="Center"
                         TextColor="Black"
                         HorizontalTextAlignment="Start"/>
-                    <!--A年齢-->
+                    <!--B年齢-->
                     <Label
                         Grid.Row="1" Grid.Column="0"
                         Text="{Binding AGE_B}"
@@ -137,7 +138,7 @@
                         VerticalOptions="Center"
                         TextColor="Black"
                         HorizontalTextAlignment="Start"/>
-                    <!--A年齢-->
+                    <!--C年齢-->
                     <Label
                         Grid.Row="2" Grid.Column="0"
                         Text="{Binding AGE_C}"
@@ -163,150 +164,156 @@
                 <CollectionView ItemsSource="{Binding Values}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Grid 
+                            <Frame Padding="10">
+                                <Grid 
                                 RowDefinitions="Auto,Auto"
                                 ColumnSpacing="5">
-                                <Grid
-                                    Grid.Row="0" Grid.Column="0"
-                                    RowDefinitions="Auto,Auto"
-                                    ColumnDefinitions="Auto,Auto,Auto,Auto">
-                                    <Label
+                                    <Grid
                                         Grid.Row="0" Grid.Column="0"
-                                        Text="返済年数"
-                                        Padding="20,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightYellow"/>
-                                    <Label
-                                        Grid.Row="1" Grid.Column="0"
-                                        Text="{Binding Year}"
-                                        HorizontalTextAlignment="Center"
-                                        Padding="20,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightYellow"/>
+                                        RowDefinitions="Auto,Auto"
+                                        ColumnDefinitions="2*,*,*,*">
+                                        <Label
+                                            Grid.Row="0" Grid.Column="0"
+                                            Text="返済経過年数"
+                                            Padding="20,0"
+                                            HorizontalTextAlignment="Center"
+                                            TextColor="White"
+                                            BackgroundColor="black"/>
+                                        <Label
+                                            Grid.Row="1" Grid.Column="0"
+                                            Text="{Binding Year}"
+                                            HorizontalTextAlignment="Center"
+                                            Padding="20,0"
+                                            TextColor="White"
+                                            BackgroundColor="black"/>
 
-                                    <Label
-                                        Grid.Row="0" Grid.Column="1"
-                                        Text="A年齢"
-                                        Padding="20,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightBlue"/>
-                                    <Label
-                                        Grid.Row="1" Grid.Column="1"
-                                        Text="{Binding AgeA}"
-                                        HorizontalTextAlignment="Center"
-                                        Padding="20,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightBlue"/>
+                                        <Label
+                                            Grid.Row="0" Grid.Column="1"
+                                            Text="A年齢"
+                                            Padding="20,0"
+                                            HorizontalTextAlignment="Center"
+                                            TextColor="white"
+                                            BackgroundColor="SlateGray"/>
+                                        <Label
+                                            Grid.Row="1" Grid.Column="1"
+                                            Text="{Binding AgeA}"
+                                            HorizontalTextAlignment="Center"
+                                            Padding="20,0"
+                                            TextColor="white"
+                                            BackgroundColor="SlateGray"/>
                                 
-                                    <Label
-                                        Grid.Row="0" Grid.Column="2"
-                                        Text="B年齢"
-                                        Padding="20,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightYellow"/>
-                                    <Label
-                                        Grid.Row="1" Grid.Column="2"
-                                        Text="{Binding AgeB}"
-                                        HorizontalTextAlignment="Center"
-                                        Padding="20,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightYellow"/>
+                                        <Label
+                                            Grid.Row="0" Grid.Column="2"
+                                            Text="B年齢"
+                                            Padding="20,0"
+                                            HorizontalTextAlignment="Center"
+                                            TextColor="white"
+                                            BackgroundColor="SlateGray"/>
+                                        <Label
+                                            Grid.Row="1" Grid.Column="2"
+                                            Text="{Binding AgeB}"
+                                            HorizontalTextAlignment="Center"
+                                            Padding="20,0"
+                                            TextColor="white"
+                                            BackgroundColor="SlateGray"/>
                                 
-                                    <Label
-                                        Grid.Row="0" Grid.Column="3"
-                                        Text="C年齢"
-                                        Padding="20,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightBlue"/>
-                                    <Label
-                                        Grid.Row="1" Grid.Column="3"
-                                        Text="{Binding AgeC}"
-                                        HorizontalTextAlignment="Center"
-                                        Padding="20,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightBlue"/>
+                                        <Label
+                                            Grid.Row="0" Grid.Column="3"
+                                            Text="C年齢"
+                                            Padding="20,0"
+                                            HorizontalTextAlignment="Center"
+                                            TextColor="White"
+                                            BackgroundColor="SlateGray"/>
+                                        <Label
+                                            Grid.Row="1" Grid.Column="3"
+                                            Text="{Binding AgeC}"
+                                            HorizontalTextAlignment="Center"
+                                            Padding="20,0"
+                                            TextColor="White"
+                                            BackgroundColor="SlateGray"/>
+                                    </Grid>
+                                
+                                    <Grid 
+                                        Grid.Row="1"
+                                        RowDefinitions="Auto,Auto"
+                                        ColumnDefinitions="*,*,*,*,*">
+                                        <Label
+                                            Grid.Row="0" Grid.Column="0"
+                                            Text="残債"
+                                            HorizontalTextAlignment="Center"
+                                            Padding="5,0"
+                                            TextColor="red"
+                                            BackgroundColor="LightYellow"/>
+                                        <Label
+                                            Grid.Row="1" Grid.Column="0"
+                                            Text="{Binding RemainingDebt}"
+                                            HorizontalTextAlignment="Center"
+                                            Padding="5,0"
+                                            TextColor="red"
+                                            BackgroundColor="LightYellow"/>
+                                        <Label
+                                            Grid.Row="0" Grid.Column="1"
+                                            Text="支払い利息"
+                                            HorizontalTextAlignment="Center"
+                                            Padding="5,0"
+                                            TextColor="Black"
+                                            BackgroundColor="LightYellow"/>
+                                        <Label
+                                            Grid.Row="1" Grid.Column="1"
+                                            Text="{Binding RepaymentInterest}"
+                                            HorizontalTextAlignment="Center"
+                                            Padding="5,0"
+                                            TextColor="Black"
+                                            BackgroundColor="LightYellow"/>
+                                
+                                        <Label
+                                            Grid.Row="0" Grid.Column="2"
+                                            Text="支払い元金"
+                                            HorizontalTextAlignment="Center"
+                                            Padding="5,0"
+                                            TextColor="Black"
+                                            BackgroundColor="LightYellow"/>
+                                        <Label
+                                            Grid.Row="1" Grid.Column="2"
+                                            Text="{Binding RepaymentPrincipal}"
+                                            HorizontalTextAlignment="Center"
+                                            Padding="5,0"
+                                            TextColor="Black"
+                                            BackgroundColor="LightYellow"/>
+                                
+                                        <Label
+                                            Grid.Row="0" Grid.Column="3"
+                                            Text="支払い合計額"
+                                            HorizontalTextAlignment="Center"
+                                            Padding="5,0"
+                                            TextColor="red"
+                                            BackgroundColor="LightYellow"/>
+                                        <Label
+                                            Grid.Row="1" Grid.Column="3"
+                                            Text="{Binding RepaymentAmount}"
+                                            HorizontalTextAlignment="Center"
+                                            Padding="5,0"
+                                            TextColor="red"
+                                            BackgroundColor="LightYellow"/>
+                                
+                                        <Label
+                                            Grid.Row="0" Grid.Column="4"
+                                            Text="貯金額"
+                                            HorizontalTextAlignment="Center"
+                                            Padding="5,0"
+                                            TextColor="Black"
+                                            BackgroundColor="LightBlue"/>
+                                        <Label
+                                            Grid.Row="1" Grid.Column="4"
+                                            Text="{Binding Saving}"
+                                            HorizontalTextAlignment="Center"
+                                            Padding="5,0"
+                                            TextColor="Black"
+                                            BackgroundColor="LightBlue"/>
+                                    </Grid>
                                 </Grid>
-                                
-                                <Grid 
-                                    Grid.Row="1"
-                                    RowDefinitions="Auto,Auto"
-                                    ColumnDefinitions="Auto,Auto,Auto,Auto,Auto">
-                                    <Label
-                                        Grid.Row="0" Grid.Column="0"
-                                        Text="残債"
-                                        HorizontalTextAlignment="Center"
-                                        Padding="5,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightYellow"/>
-                                    <Label
-                                        Grid.Row="1" Grid.Column="0"
-                                        Text="{Binding RemainingDebt}"
-                                        HorizontalTextAlignment="Center"
-                                        Padding="5,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightYellow"/>
-                                
-                                    <Label
-                                        Grid.Row="0" Grid.Column="1"
-                                        Text="支払い利息"
-                                        HorizontalTextAlignment="Center"
-                                        Padding="5,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightBlue"/>
-                                    <Label
-                                        Grid.Row="1" Grid.Column="1"
-                                        Text="{Binding RepaymentInterest}"
-                                        HorizontalTextAlignment="Center"
-                                        Padding="5,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightBlue"/>
-                                
-                                    <Label
-                                        Grid.Row="0" Grid.Column="2"
-                                        Text="支払い元金"
-                                        HorizontalTextAlignment="Center"
-                                        Padding="5,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightYellow"/>
-                                    <Label
-                                        Grid.Row="1" Grid.Column="2"
-                                        Text="{Binding RepaymentPrincipal}"
-                                        HorizontalTextAlignment="Center"
-                                        Padding="5,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightYellow"/>
-                                
-                                    <Label
-                                        Grid.Row="0" Grid.Column="3"
-                                        Text="支払い合計額"
-                                        HorizontalTextAlignment="Center"
-                                        Padding="5,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightBlue"/>
-                                    <Label
-                                        Grid.Row="1" Grid.Column="3"
-                                        Text="{Binding RepaymentAmount}"
-                                        HorizontalTextAlignment="Center"
-                                        Padding="5,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightBlue"/>
-                                
-                                    <Label
-                                        Grid.Row="0" Grid.Column="4"
-                                        Text="貯金額"
-                                        HorizontalTextAlignment="Center"
-                                        Padding="5,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightYellow"/>
-                                    <Label
-                                        Grid.Row="1" Grid.Column="4"
-                                        Text="{Binding Saving}"
-                                        HorizontalTextAlignment="Center"
-                                        Padding="5,0"
-                                        TextColor="Black"
-                                        BackgroundColor="LightYellow"/>
-                                </Grid>
-                            </Grid>
+
+                            </Frame>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>

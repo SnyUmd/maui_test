@@ -26,10 +26,12 @@ public partial class ResultPage : ContentPage
 
         //標準ナビバー非表示
         NavigationPage.SetHasNavigationBar(this, false);
-
 		BindingContext = vmResultPage;
+
+        updateCorectionView();
     }
 
+    /*
     //*******************************************************************
     private List<string> CalLoan_Json(bool is_repayment_amount)
     {
@@ -98,14 +100,15 @@ public partial class ResultPage : ContentPage
 
         return lstResult;
     }
-
+    */
 
     //*******************************************************************
     private List<ClsValue> CalLoan_Values(bool is_repayment_amount)
     {
         List<ClsValue> lstResult = new();
         ClsValue clsValue = new();
-        int LoopNum = 50 * 12;
+        //int LoopNum = 50 * 12;
+        int LoopNum = ClsCommon.LoanStatus.YearsOfRepayment * 12 + 1;
         double previous_month_repayment = 0;
 
 
@@ -170,21 +173,42 @@ public partial class ResultPage : ContentPage
     }
 
     //*******************************************************************
-    private void ClickedDebug(object sender, EventArgs e)
+    private void updateCorectionView()
     {
         int y = 0;
-        var resultBuf = CalLoan_Values(true);
+        bool isRepayment = false;
+
+        if (ClsCommon.LoanStatus.RepaymentType == 0) isRepayment = true;
+        var resultBuf = CalLoan_Values(isRepayment);
 
         Debug.WriteLine("-------------------");
         foreach (var val in resultBuf)
         {
-            if ((val.Year == 0 && val.Month == 1) || y != val.Year)
-            {
+            //if ((val.Year == 0 && val.Month == 1) || y != val.Year)
+            if (val.Year != 0 && val.Month == 1)
+                {
                 vmResultPage.SetValueContextView(val);
                 y = val.Year;
             }
         }
-        Debug.WriteLine("-------------------");
+    }
+
+    //*******************************************************************
+    private void ClickedDebug(object sender, EventArgs e)
+    {
+        //int y = 0;
+        //var resultBuf = CalLoan_Values(true);
+
+        //Debug.WriteLine("-------------------");
+        //foreach (var val in resultBuf)
+        //{
+        //    if ((val.Year == 0 && val.Month == 1) || y != val.Year)
+        //    {
+        //        vmResultPage.SetValueContextView(val);
+        //        y = val.Year;
+        //    }
+        //}
+        //Debug.WriteLine("-------------------");
 
     }
 }

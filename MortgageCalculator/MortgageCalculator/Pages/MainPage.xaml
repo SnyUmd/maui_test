@@ -92,7 +92,7 @@
                     <!--返済年数-->
                     <Label
                         Grid.Row="2" Grid.Column="0"
-                        Text="{Binding YEAR_OF_REPAYMENT}"
+                        Text="{Binding YEAR_OF_REPAYMENT1}"
                         FontSize="18"
                         TextColor="Black"
                         VerticalOptions="Center"

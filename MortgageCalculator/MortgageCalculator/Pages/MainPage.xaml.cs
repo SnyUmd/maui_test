@@ -91,8 +91,8 @@ public partial class MainPage : ContentPage
         EntryYearsOfRepayment.Text = "35";
         PickerType.SelectedIndex = 0;
         EntrySaving.Text = "17";
-        EntryAgeA.Text = "42";
-        EntryAgeB.Text = "51";
+        EntryAgeA.Text = "41";
+        EntryAgeB.Text = "50";
         EntryAgeC.Text = "";
     }
 

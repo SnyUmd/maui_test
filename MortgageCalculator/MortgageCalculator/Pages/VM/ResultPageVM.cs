@@ -15,7 +15,8 @@ namespace MortgageCalculator.Pages.VM
 
         public string LOAN_PRICE {get;} = "借入価格";
         public string INTEREST_RATE { get; } = "金利";
-        public string YEAR_OF_REPAYMENT { get; } = "返済年数";
+        public string YEAR_OF_REPAYMENT1 { get; } = "返済年数";
+        public string PROGRESS_YEAR { get; } = "返済経過年数";
         public string LOAN_TYPE { get; } = "返済タイプ";
         public string SAVING { get; } = "貯金月額";
         public string AGE_A { get; } = "開始年齢 A";
