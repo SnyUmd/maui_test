@@ -13,7 +13,7 @@ public partial class MainPage : ContentPage
     public MainPage()
 	{
 		InitializeComponent();
-        BindingContext = new VM.VM_StatusName();
+        BindingContext = new VM.ResultPageVM();
 		ClsDebug.DebugWriteLine(ClsCommon.CURRENT_DIRECTRY);
 
         //標準ナビバー非表示

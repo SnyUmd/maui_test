@@ -10,6 +10,9 @@ namespace MortgageCalculator.Classes
     {
         public int Year { get; set; }
         public int Month { get; set; }
+        public int AgeA { get; set; }
+        public int AgeB { get; set; }
+        public int AgeC { get; set; }
 
         public double RemainingDebt { get; set; }      //残債
         public double RepaymentInterest { get; set; }  //利息
@@ -17,22 +20,23 @@ namespace MortgageCalculator.Classes
         public double RepaymentAmount { get; set; }    //返済額
         public double Saving { get; set; }              //貯金
 
-        public int AgeA { get; set; }
-        public int AgeB { get; set; }
-        public int AgeC { get; set; }
 
-        public ClsValue()
+
+        public ClsValue(ClsValue cv = null)
         {
-            RemainingDebt = 0;
-            RepaymentInterest = 0;
-            RepaymentPrincipal = 0;
-            RepaymentAmount = 0;
-            Saving = 0;
+            if (cv != null)
+            {
+                RemainingDebt = cv.RemainingDebt;
+                RepaymentInterest = cv.RepaymentInterest;
+                RepaymentPrincipal = cv.RepaymentPrincipal;
+                RepaymentAmount = cv.RepaymentAmount;
+                Saving = cv.Saving;
 
-            Year = 0;
-            Month = 0;
+                Year = cv.Year;
+                Month = cv.Month;
 
-            AgeA = 0; AgeB = 0; AgeC = 0;
+                AgeA = cv.AgeA; AgeB = cv.AgeB; AgeC = cv.AgeC;
+            }
         }
     }
 }
