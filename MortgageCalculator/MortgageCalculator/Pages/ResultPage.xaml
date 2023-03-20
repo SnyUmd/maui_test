@@ -164,7 +164,7 @@
                 <CollectionView ItemsSource="{Binding Values}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Frame Padding="10">
+                            <Frame Padding="5">
                                 <Grid 
                                 RowDefinitions="Auto,Auto"
                                 ColumnSpacing="5">
