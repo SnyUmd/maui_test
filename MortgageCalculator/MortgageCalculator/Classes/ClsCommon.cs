@@ -11,15 +11,16 @@ namespace MortgageCalculator.Classes
     //==============================================================================================
     internal class ClsCommon
     {
-        public static readonly string CURRENT_DIRECTRY = AppDomain.CurrentDomain.BaseDirectory;
-#if IOS
-        // iOSの場合
-        public static string documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-        public string localAppData = Path.Combine(documents, "..", "Library");
-#elif ANDROID
-        // Androidの場合
-        public static readonly string LOCAL_APP_DATA = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        public static string CurrentDir = AppDomain.CurrentDomain.BaseDirectory;
+
+#if ANDROID
+        public static string DirSeparator = "/";
+#else
+        public static string DirSeparator = "\\";
 #endif
+        public static string DbFileName = "mCalc";
+
+        public static string DbFilePath = CurrentDir + DirSeparator + DbFileName;
 
         public static ClsStatus LoanStatus = new();
 
@@ -33,11 +34,6 @@ namespace MortgageCalculator.Classes
             "元金均等返済",
             "元利均等返済"
         };
-
-        //*******************************************************************
-        public void Init()
-        {
-        }
 
     }
 

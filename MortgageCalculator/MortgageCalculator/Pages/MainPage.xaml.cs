@@ -14,12 +14,12 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
         BindingContext = new VM.ResultPageVM();
-		ClsDebug.DebugWriteLine(ClsCommon.CURRENT_DIRECTRY);
+		ClsDebug.DebugWriteLine(ClsCommon.CurrentDir);
 
         //標準ナビバー非表示
         NavigationPage.SetHasNavigationBar(this, false);
 #if ANDROID
-        ClsDebug.DebugWriteLine(ClsCommon.LOCAL_APP_DATA);
+        ClsDebug.DebugWriteLine(ClsCommon.CurrentDir);
 #endif
 
         actionChangeTypeImage = (a) => ImageType.Source = ClsCommon.ImageDataSources[a];
