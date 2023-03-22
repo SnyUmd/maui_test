@@ -1,5 +1,4 @@
-﻿using Android.OS;
-using MortgageCalculator.Classes;
+﻿using MortgageCalculator.Classes;
 
 namespace MortgageCalculator;
 
