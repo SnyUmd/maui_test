@@ -6,9 +6,23 @@ using System.Threading.Tasks;
 
 namespace MortgageCalculator.Classes
 {
-    class Tables
+    public enum EnmTable_num
     {
-        public string[] tbl_saved_status = new string[]
+        tbl_saved_status = 0,
+        tbl_history_status
+    }
+
+    internal class Tables
+    {
+
+
+        public static string[] tables_name = new string[]
+        {
+            "tbl_saved_status",
+            "tbl_history_status"
+        };
+
+        public static string[] tbl_saved_status = new string[]
         {
             "id",
             "status_name",
@@ -21,7 +35,7 @@ namespace MortgageCalculator.Classes
             "age_c"
         };
 
-        public string[] tbl_history_status = new string[]
+        public static string[] tbl_history_status = new string[]
         {
             "id",
             "loan_price",

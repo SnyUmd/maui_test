@@ -35,6 +35,47 @@ namespace MortgageCalculator.Classes
             "元利均等返済"
         };
 
+        //class Tablesの情報---------------------------------
+        public static string[] TablesName = Tables.tables_name;
+        public static string[] TblSavedStatucs = Tables.tbl_saved_status;
+        public static string[] TablesHistoryStatus = Tables.tbl_history_status;
+
+        public static void Init()
+        {
+            //DBファイルをチェック
+            if(!System.IO.File.Exists(ClsCommon.DbFilePath))
+            {
+                SqliteCtrl.CreateDbFile(ClsCommon.DbFileName, ClsCommon.CurrentDir + ClsCommon.DirSeparator);
+                MauiCtrl.ClsDebug.DebugWriteLine(System.IO.File.Exists(ClsCommon.DbFilePath).ToString());
+            }
+            else
+            {
+                //テーブルの存在をチェック
+                if (!MauiCtrl.SqliteCtrl.FindTable(ClsCommon.DbFilePath, TablesName[(int)EnmTable_num.tbl_saved_status]))
+                {
+                    MauiCtrl.ClsDebug.DebugWriteLine("tbl_history_status false");
+                    SqliteCtrl.CreateTable(TablesName[(int)EnmTable_num.tbl_saved_status], ClsCommon.DbFilePath)
+                }
+                else
+                {
+                    MauiCtrl.ClsDebug.DebugWriteLine("tbl_history_status true");
+
+                }
+
+                if (!MauiCtrl.SqliteCtrl.FindTable(ClsCommon.DbFilePath, TablesName[(int)EnmTable_num.tbl_history_status]))
+                {
+                    MauiCtrl.ClsDebug.DebugWriteLine("tbl_history_status false");
+                }
+                else
+                {
+                    MauiCtrl.ClsDebug.DebugWriteLine("tbl_history_status true");
+
+                }
+
+            }
+
+        }
+
     }
 
 
