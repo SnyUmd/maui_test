@@ -39,43 +39,10 @@ namespace MortgageCalculator.Classes
 
         //class Tablesの情報---------------------------------
         public static string[] TablesName = Tables.tables_name;
-        public static string[] TblSavedStatucs = Tables.tbl_saved_status;
-        public static string[] TblesHistoryStatus = Tables.tbl_history_status;
+        //public static Dictionary<string, bool> TblSavedStatucs = Tables.tbl_saved_status;
+        //public static Dictionary<string, bool> TblesHistoryStatus = Tables.tbl_history_status;
 
-        //*******************************************************************
-        public static void Init()
-        {
-            //DBファイルをチェック
-            if(!System.IO.File.Exists(ClsCommon.DbFilePath))
-            {
-                SqliteCtrl.CreateDbFile(ClsCommon.DbFileName, ClsCommon.CurrentDir + ClsCommon.DirSeparator);
-                MauiCtrl.ClsDebug.DebugWriteLine(System.IO.File.Exists(ClsCommon.DbFilePath).ToString());
-            }
-            //テーブルの存在をチェック
-            if (!MauiCtrl.SqliteCtrl.FindTable(ClsCommon.DbFilePath, TablesName[(int)EnmTable_num.tbl_saved_status]))
-            {
-                MauiCtrl.ClsDebug.DebugWriteLine("tbl_saved_status false");
-                SqliteCtrl.CreateTable(TablesName[(int)EnmTable_num.tbl_saved_status], TblSavedStatucs, ClsCommon.DbFilePath);
-            }
-            else
-            {
-                MauiCtrl.ClsDebug.DebugWriteLine("tbl_saved_status true");
-            }
-
-            if (!MauiCtrl.SqliteCtrl.FindTable(ClsCommon.DbFilePath, TablesName[(int)EnmTable_num.tbl_history_status]))
-            {
-                MauiCtrl.ClsDebug.DebugWriteLine("tbl_history_status false");
-                SqliteCtrl.CreateTable(TablesName[(int)EnmTable_num.tbl_history_status], TblesHistoryStatus, ClsCommon.DbFilePath);
-            }
-            else
-            {
-                MauiCtrl.ClsDebug.DebugWriteLine("tbl_history_status true");
-            }
-
-            Debug.WriteLine(SqliteCtrl.ReadQuery(ClsCommon.DbFilePath, $"PRAGMA table_info('{TablesName[(int)EnmTable_num.tbl_saved_status]}');"));
-            Debug.WriteLine(SqliteCtrl.ReadQuery(ClsCommon.DbFilePath, $"PRAGMA table_info('{TablesName[(int)EnmTable_num.tbl_history_status]}');"));
-
-        }
+        
 
     }
 

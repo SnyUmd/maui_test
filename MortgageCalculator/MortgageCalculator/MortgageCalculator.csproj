@@ -61,7 +61,7 @@
 
 	<ItemGroup>
 	  <Reference Include="MauiCtrl">
-	    <HintPath>..\..\..\MauiCtrl\MauiCtrl\MauiCtrl\bin\Debug\net6.0-windows10.0.19041.0\MauiCtrl.dll</HintPath>
+	    <HintPath>..\..\..\MauiCtrl\MauiCtrl\MauiCtrl\bin\Debug\net6.0\MauiCtrl.dll</HintPath>
 	  </Reference>
 	</ItemGroup>
 

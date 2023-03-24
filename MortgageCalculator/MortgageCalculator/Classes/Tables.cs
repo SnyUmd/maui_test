@@ -36,7 +36,7 @@ namespace MortgageCalculator.Classes
         };
 
         public static string[] tbl_history_status = new string[]
-        {
+{
             "id",
             "loan_price",
             "interest_rate",
@@ -48,5 +48,44 @@ namespace MortgageCalculator.Classes
             "used_date",
             "used_time"
         };
+
+
+        public struct CreateTablesString
+        {
+            public string[] tbl_saved_status = new string[]
+            {
+                "id integer prymary key",
+                "status_name text",
+                "loan_price int",
+                "interest_rate real",
+                "years_of_repayment int",
+                "loan_type int",
+                "age_a int default null",
+                "age_b int default null",
+                "age_c int default null"
+            };
+
+            public string[] tbl_history_status = new string[]
+            {
+                "id integer prymary key",
+                "loan_price int",
+                "interest_rate real",
+                "years_of_repayment int",
+                "loan_type int",
+                "age_a int default null",
+                "age_b int default null",
+                "age_c int default null",
+                "used_date text",
+                "used_time text"
+            };
+
+            public CreateTablesString()
+            {
+
+            }
+            
+        };
+        public static CreateTablesString CreateTableStr = new();
+
     }
 }
