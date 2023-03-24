@@ -193,7 +193,7 @@
                                             Padding="20,0"
                                             HorizontalTextAlignment="Center"
                                             TextColor="white"
-                                            BackgroundColor="SlateGray"/>
+                                            BackgroundColor="Black"/>
                                         <Label
                                             Grid.Row="1" Grid.Column="1"
                                             Text="{Binding AgeA}"
@@ -208,7 +208,7 @@
                                             Padding="20,0"
                                             HorizontalTextAlignment="Center"
                                             TextColor="white"
-                                            BackgroundColor="SlateGray"/>
+                                            BackgroundColor="Black"/>
                                         <Label
                                             Grid.Row="1" Grid.Column="2"
                                             Text="{Binding AgeB}"
@@ -223,7 +223,7 @@
                                             Padding="20,0"
                                             HorizontalTextAlignment="Center"
                                             TextColor="White"
-                                            BackgroundColor="SlateGray"/>
+                                            BackgroundColor="Black"/>
                                         <Label
                                             Grid.Row="1" Grid.Column="3"
                                             Text="{Binding AgeC}"

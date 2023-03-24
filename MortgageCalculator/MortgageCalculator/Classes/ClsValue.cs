@@ -22,6 +22,14 @@ namespace MortgageCalculator.Classes
 
 
 
+        public double Price { get; set; }   //借入価格
+        public double Interest { get; set; }   //利息
+        public double YearOfRepayment { get; set; }   //借入価格
+        public double Type { get; set; }   //借入価格
+
+
+
+
         public ClsValue(ClsValue cv = null)
         {
             if (cv != null)
@@ -36,6 +44,11 @@ namespace MortgageCalculator.Classes
                 Month = cv.Month;
 
                 AgeA = cv.AgeA; AgeB = cv.AgeB; AgeC = cv.AgeC;
+
+                Price = cv.Price;
+                Interest = cv.Interest;
+                YearOfRepayment = cv.YearOfRepayment;
+                Type = cv.Type;
             }
         }
     }

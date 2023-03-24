@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using MauiCtrl;
 using System.Diagnostics;
 using System.Text.Json.Nodes;
+using System.Reflection;
 
 namespace MortgageCalculator.Pages;
 
@@ -66,6 +67,22 @@ public partial class MainPage : ContentPage
         AddHistory();
 
         await Navigation.PushAsync(new Pages.ResultPage());
+    }
+
+    //*******************************************************************
+    private async void ClickedHistory(object sender, EventArgs e)
+    {
+        List<string> lstHistiry = new List<string>();
+
+        await Navigation.PushModalAsync(new Pages.Modal.RecordSelectModal(lstHistiry));
+    }
+
+    //*******************************************************************
+    private List<string> GetHistory(string table_name)
+    {
+        string query = $"select * from {table_name};";
+        return MauiCtrl.SqliteCtrl.ReadQuery(ClsCommon.DbFilePath, query);
+
     }
 
     //*******************************************************************
@@ -139,11 +156,14 @@ public partial class MainPage : ContentPage
     private void SetStatus_EndOfHistory()
     {
         //履歴の最後のテーブル情報に画面を更新
-        string query = $"select * from {Tables.tables_name[(int)EnmTable_num.tbl_history_status]};";
-        var history = MauiCtrl.SqliteCtrl.ReadQuery(ClsCommon.DbFilePath, query);
+        //string query = $"select * from {Tables.tables_name[(int)EnmTable_num.tbl_history_status]};";
+        //var history = MauiCtrl.SqliteCtrl.ReadQuery(ClsCommon.DbFilePath, query);
+        var history = GetHistory(Tables.tables_name[(int)EnmTable_num.tbl_history_status]);
+
+
         var record = JsonNode.Parse(history[history.Count - 1]);
         Debug.WriteLine(record[Tables.tbl_history_status[1]]);
-        //umd仕様
+
         EntryLoanPrice.Text = record[Tables.tbl_history_status[1]].ToString();
         EntryInterestRate.Text = record[Tables.tbl_history_status[2]].ToString();
         EntryYearsOfRepayment.Text = record[Tables.tbl_history_status[3]].ToString();
@@ -179,6 +199,7 @@ public partial class MainPage : ContentPage
         
         return resultStatus;
     }
+
 
 }
 

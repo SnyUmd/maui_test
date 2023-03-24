@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MortgageCalculator.Pages.Modal.RecordSelectModal"
+             Title="RecordSelectModal"
+             Padding="20,50,20,50"  
+             BackgroundColor="Transparent">
+
+    <Grid BackgroundColor="black" RowDefinitions="*,Auto" ColumnSpacing="10">
+        <Frame Grid.Row="0" Padding="10" Margin="10,10,10,3" BackgroundColor="LightSkyBlue">
+            <ScrollView>
+                <CollectionView ItemsSource="{Binding Values}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="5" BackgroundColor="White">
+                                <Grid ColumnDefinitions="*,*" >
+                                    <Grid 
+                                        Grid.Column="0"
+                                        ColumnDefinitions="*,*" 
+                                        RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                                        ColumnSpacing="5" RowSpacing="5">
+                                        <Label
+                                            Grid.Row="0" Grid.Column="0"
+                                            Text="{Binding LOAN_PRICE}"
+                                            FontSize="16"
+                                            VerticalOptions="Center"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="End"/>
+
+                                        <Label
+                                            Grid.Row="0" Grid.Column="1"
+                                            x:Name="LabelLoanPrice"
+                                            Text="{Binding Price}"
+                                            VerticalTextAlignment="Center"
+                                            FontSize="16"
+                                            VerticalOptions="Center"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="Start"/>
+
+                                        <!--1 金利-->
+                                        <Label
+                                            Grid.Row="1" Grid.Column="0"
+                                            Text="{Binding INTEREST_RATE}"
+                                            FontSize="16"
+                                            TextColor="Black"
+                                            VerticalOptions="Center"
+                                            HorizontalTextAlignment="End"/>
+                                        <Label
+                                            Grid.Row="1" Grid.Column="1"
+                                            x:Name="LabelInterestRate"
+                                            Text="{Binding Interest}"
+                                            FontSize="16"
+                                            VerticalOptions="Center"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="Start"/>
+
+                                        <!--返済年数-->
+                                        <Label
+                                            Grid.Row="2" Grid.Column="0"
+                                            Text="{Binding YEAR_OF_REPAYMENT1}"
+                                            FontSize="16"
+                                            TextColor="Black"
+                                            VerticalOptions="Center"
+                                            HorizontalTextAlignment="End"/>
+                                        <Label
+                                            Grid.Row="2" Grid.Column="1"
+                                            x:Name="LabelYearOfRepayment"
+                                            Text="{Binding YearOfRepayment}"
+                                            FontSize="16"
+                                            VerticalOptions="Center"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="Start"/>
+
+                                        <!--返済タイプ-->
+                                        <Label
+                                            Grid.Row="3" Grid.Column="0"
+                                            Text="{Binding LOAN_TYPE}"
+                                            FontSize="16"
+                                            TextColor="Black"
+                                            HorizontalOptions="End"
+                                            VerticalOptions="Center"/>
+                                        <Label
+                                            Grid.Row="3" Grid.Column="1"
+                                            x:Name="LabelLoanType"
+                                            Text="{Binding Type}"
+                                            FontSize="16"
+                                            VerticalOptions="Center"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="Start"/>
+
+                                        <!--貯金月額-->
+                                        <Label
+                                            Grid.Row="4" Grid.Column="0"
+                                            Text="{Binding SAVING}"
+                                            FontSize="16"
+                                            VerticalOptions="Center"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="End"/>
+                                        <Label
+                                            Grid.Row="4" Grid.Column="1"
+                                            x:Name="LabelSaving"
+                                            Text="{Binding Saving}"
+                                            FontSize="16"
+                                            VerticalOptions="Center"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="Start"/>
+                                    </Grid>
+                                    <Grid 
+                                        Grid.Column="1"
+                                        ColumnDefinitions="*,*" 
+                                        RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                                        ColumnSpacing="15" RowSpacing="3">
+                                        <!--A年齢-->
+                                        <Label
+                                            Grid.Row="0" Grid.Column="0"
+                                            Text="{Binding AGE_A}"
+                                            FontSize="16"
+                                            VerticalOptions="Center"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="End"/>
+                                        <Label
+                                            Grid.Row="0" Grid.Column="1"
+                                            x:Name="LabelAgeA"
+                                            Text="{Binding AgeA}"
+                                            FontSize="16"
+                                            VerticalOptions="Center"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="Start"/>
+                                        <!--B年齢-->
+                                        <Label
+                                            Grid.Row="1" Grid.Column="0"
+                                            Text="{Binding AGE_B}"
+                                            FontSize="16"
+                                            VerticalOptions="Center"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="End"/>
+                                        <Label
+                                            Grid.Row="1" Grid.Column="1"
+                                            x:Name="LabelAgeB"
+                                            Text="{Binding AgeB}"
+                                            FontSize="16"
+                                            VerticalOptions="Center"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="Start"/>
+                                        <!--C年齢-->
+                                        <Label
+                                            Grid.Row="2" Grid.Column="0"
+                                            Text="{Binding AGE_C}"
+                                            FontSize="16"
+                                            VerticalOptions="Center"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="End"/>
+                                        <Label
+                                            Grid.Row="2" Grid.Column="1"
+                                            x:Name="LabelAgeC"
+                                            Text="{Binding AgeC}"
+                                            FontSize="16"
+                                            VerticalOptions="Center"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="Start"/>
+                                    </Grid>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+        </Frame>
+        <Frame Grid.Row="1" Margin="10,3,10,10" BackgroundColor="LightSkyBlue">
+            <Button Text="Back" Padding="5" BackgroundColor="SlateGray" TextColor="White" FontSize="20"/>
+        </Frame>
+    </Grid>
+</ContentPage>
