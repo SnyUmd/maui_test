@@ -7,9 +7,9 @@
              BackgroundColor="Transparent">
 
     <Grid BackgroundColor="black" RowDefinitions="*,Auto" ColumnSpacing="10">
-        <Frame Grid.Row="0" Padding="10" Margin="10,10,10,3" BackgroundColor="LightSkyBlue">
+        <Frame Grid.Row="0" Padding="10" Margin="5,5,5,3" BackgroundColor="WhiteSmoke">
             <ScrollView>
-                <CollectionView ItemsSource="{Binding Values}">
+                <CollectionView ItemsSource="{Binding sts}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Frame Padding="5" BackgroundColor="White">
@@ -18,10 +18,10 @@
                                         Grid.Column="0"
                                         ColumnDefinitions="*,*" 
                                         RowDefinitions="Auto,Auto,Auto,Auto,Auto"
-                                        ColumnSpacing="5" RowSpacing="5">
+                                        ColumnSpacing="15" RowSpacing="3">
                                         <Label
                                             Grid.Row="0" Grid.Column="0"
-                                            Text="{Binding LOAN_PRICE}"
+                                            Text="借入価格"
                                             FontSize="16"
                                             VerticalOptions="Center"
                                             TextColor="Black"
@@ -30,7 +30,7 @@
                                         <Label
                                             Grid.Row="0" Grid.Column="1"
                                             x:Name="LabelLoanPrice"
-                                            Text="{Binding Price}"
+                                            Text="{Binding LoanPrice}"
                                             VerticalTextAlignment="Center"
                                             FontSize="16"
                                             VerticalOptions="Center"
@@ -40,7 +40,7 @@
                                         <!--1 金利-->
                                         <Label
                                             Grid.Row="1" Grid.Column="0"
-                                            Text="{Binding INTEREST_RATE}"
+                                            Text="金利"
                                             FontSize="16"
                                             TextColor="Black"
                                             VerticalOptions="Center"
@@ -48,7 +48,7 @@
                                         <Label
                                             Grid.Row="1" Grid.Column="1"
                                             x:Name="LabelInterestRate"
-                                            Text="{Binding Interest}"
+                                            Text="{Binding InterestRate}"
                                             FontSize="16"
                                             VerticalOptions="Center"
                                             TextColor="Black"
@@ -57,7 +57,7 @@
                                         <!--返済年数-->
                                         <Label
                                             Grid.Row="2" Grid.Column="0"
-                                            Text="{Binding YEAR_OF_REPAYMENT1}"
+                                            Text="返済年数"
                                             FontSize="16"
                                             TextColor="Black"
                                             VerticalOptions="Center"
@@ -65,7 +65,7 @@
                                         <Label
                                             Grid.Row="2" Grid.Column="1"
                                             x:Name="LabelYearOfRepayment"
-                                            Text="{Binding YearOfRepayment}"
+                                            Text="{Binding YearsOfRepayment}"
                                             FontSize="16"
                                             VerticalOptions="Center"
                                             TextColor="Black"
@@ -74,7 +74,7 @@
                                         <!--返済タイプ-->
                                         <Label
                                             Grid.Row="3" Grid.Column="0"
-                                            Text="{Binding LOAN_TYPE}"
+                                            Text="返済タイプ"
                                             FontSize="16"
                                             TextColor="Black"
                                             HorizontalOptions="End"
@@ -82,7 +82,7 @@
                                         <Label
                                             Grid.Row="3" Grid.Column="1"
                                             x:Name="LabelLoanType"
-                                            Text="{Binding Type}"
+                                            Text="{Binding RepaymentType}"
                                             FontSize="16"
                                             VerticalOptions="Center"
                                             TextColor="Black"
@@ -91,7 +91,7 @@
                                         <!--貯金月額-->
                                         <Label
                                             Grid.Row="4" Grid.Column="0"
-                                            Text="{Binding SAVING}"
+                                            Text="貯蓄月額"
                                             FontSize="16"
                                             VerticalOptions="Center"
                                             TextColor="Black"
@@ -105,15 +105,18 @@
                                             TextColor="Black"
                                             HorizontalTextAlignment="Start"/>
                                     </Grid>
-                                    <Grid 
+                                    <Grid
                                         Grid.Column="1"
+                                        RowDefinitions="Auto, Auto">
+                                    <Grid 
+                                        Grid.Row="0" Grid.Column="1"
                                         ColumnDefinitions="*,*" 
                                         RowDefinitions="Auto,Auto,Auto,Auto,Auto"
                                         ColumnSpacing="15" RowSpacing="3">
                                         <!--A年齢-->
                                         <Label
                                             Grid.Row="0" Grid.Column="0"
-                                            Text="{Binding AGE_A}"
+                                            Text="開始年齢 A"
                                             FontSize="16"
                                             VerticalOptions="Center"
                                             TextColor="Black"
@@ -129,7 +132,7 @@
                                         <!--B年齢-->
                                         <Label
                                             Grid.Row="1" Grid.Column="0"
-                                            Text="{Binding AGE_B}"
+                                            Text="開始年齢 B"
                                             FontSize="16"
                                             VerticalOptions="Center"
                                             TextColor="Black"
@@ -145,12 +148,12 @@
                                         <!--C年齢-->
                                         <Label
                                             Grid.Row="2" Grid.Column="0"
-                                            Text="{Binding AGE_C}"
+                                            Text="開始年齢 C"
                                             FontSize="16"
                                             VerticalOptions="Center"
                                             TextColor="Black"
                                             HorizontalTextAlignment="End"/>
-                                        <Label
+                                            <Label
                                             Grid.Row="2" Grid.Column="1"
                                             x:Name="LabelAgeC"
                                             Text="{Binding AgeC}"
@@ -158,6 +161,15 @@
                                             VerticalOptions="Center"
                                             TextColor="Black"
                                             HorizontalTextAlignment="Start"/>
+                                        </Grid>
+                                        <Grid Grid.Row="2">
+                                            <Button
+                                                BackgroundColor="Coral"
+                                                TextColor="Black"
+                                                Text="{Binding Num}"
+                                                Clicked="Clicked"
+                                                Margin="5,3"/>
+                                        </Grid>
                                     </Grid>
                                 </Grid>
                             </Frame>
@@ -166,8 +178,11 @@
                 </CollectionView>
             </ScrollView>
         </Frame>
-        <Frame Grid.Row="1" Margin="10,3,10,10" BackgroundColor="LightSkyBlue">
-            <Button Text="Back" Padding="5" BackgroundColor="SlateGray" TextColor="White" FontSize="20"/>
+        <Frame Grid.Row="1" Margin="5,3,5,5" BackgroundColor="WhiteSmoke">
+            <Grid ColumnDefinitions="3*,*" ColumnSpacing="5">
+                <Button Text="戻る" Padding="5" BackgroundColor="Coral" TextColor="Black" FontSize="20" Clicked="ClickedBack"/>
+                <Button x:Name="BtnDelete" Grid.Column="1" Text="履歴削除" Padding="5" BackgroundColor="Coral" TextColor="Black" FontSize="20" Clicked="ClickedDelete"/>
+            </Grid>
         </Frame>
     </Grid>
 </ContentPage>

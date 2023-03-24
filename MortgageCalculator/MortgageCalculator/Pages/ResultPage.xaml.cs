@@ -138,6 +138,6 @@ public partial class ResultPage : ContentPage
         //    }
         //}
         //Debug.WriteLine("-------------------");
-
+        Navigation.PopAsync(true);
     }
 }

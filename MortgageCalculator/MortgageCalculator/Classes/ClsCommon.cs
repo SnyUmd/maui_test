@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
-
+using MortgageCalculator.Classes;
+using MauiCtrl;
+using System.Text.Json.Nodes;
 
 namespace MortgageCalculator.Classes
 {
@@ -42,7 +44,15 @@ namespace MortgageCalculator.Classes
         //public static Dictionary<string, bool> TblSavedStatucs = Tables.tbl_saved_status;
         //public static Dictionary<string, bool> TblesHistoryStatus = Tables.tbl_history_status;
 
-        
+
+        public static int GetRecordNum(string table_name)
+        {
+            string puery = $"SELECT COUNT(*) FROM {table_name}";
+            List<string> records = SqliteCtrl.ReadQuery(ClsCommon.DbFilePath, puery);
+            JsonNode jn = JsonNode.Parse(records[0]);
+            int result = int.Parse(jn["COUNT(*)"].ToString());
+            return result;
+        }
 
     }
 
@@ -52,25 +62,33 @@ namespace MortgageCalculator.Classes
     //==============================================================================================
     public class ClsStatus
     {
-        public double LoanPrice;       //借入価格
-        public double InterestRate;    //金利
-        public int YearsOfRepayment;//返済年数
-        public int RepaymentType;   //返済タイプ
-        public double Saving;          //貯金
-        public int AgeA;
-        public int AgeB;
-        public int AgeC;
+        public double LoanPrice { get; set; }       //借入価格
+        public double InterestRate { get; set; }    //金利
+        public int YearsOfRepayment { get; set; }//返済年数
+        public int RepaymentType { get; set; }   //返済タイプ
+        public double Saving { get; set; }          //貯金
+        public int AgeA { get; set; }
+        public int AgeB { get; set; }
+        public int AgeC { get; set; }
 
-        public ClsStatus()
+        public string Num { get; set; } = "";
+
+        public ClsStatus(ClsStatus cs = null)
         {
-            LoanPrice = 0;
-            InterestRate = 0;
-            YearsOfRepayment = 0;
-            RepaymentType = 0;
-            Saving = 0;          //貯金
-            AgeA = 0;
-            AgeB = 0;
-            AgeC = 0;
+            if (cs != null)
+            {
+                LoanPrice = cs.LoanPrice;
+                InterestRate = cs.InterestRate;
+                YearsOfRepayment = cs.YearsOfRepayment;
+                RepaymentType = cs.RepaymentType;
+                Saving = cs.Saving;
+                AgeA = cs.AgeA;
+                AgeB = cs.AgeB;
+                AgeC = cs.AgeC;
+                Num = cs.Num;
+            }
         }
+
+
     }
 }

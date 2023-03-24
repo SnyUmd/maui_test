@@ -193,14 +193,14 @@
                                             Padding="20,0"
                                             HorizontalTextAlignment="Center"
                                             TextColor="white"
-                                            BackgroundColor="Black"/>
+                                            BackgroundColor="DarkBlue"/>
                                         <Label
                                             Grid.Row="1" Grid.Column="1"
                                             Text="{Binding AgeA}"
                                             HorizontalTextAlignment="Center"
                                             Padding="20,0"
                                             TextColor="white"
-                                            BackgroundColor="SlateGray"/>
+                                            BackgroundColor="DarkBlue"/>
                                 
                                         <Label
                                             Grid.Row="0" Grid.Column="2"
@@ -208,14 +208,14 @@
                                             Padding="20,0"
                                             HorizontalTextAlignment="Center"
                                             TextColor="white"
-                                            BackgroundColor="Black"/>
+                                            BackgroundColor="DarkBlue"/>
                                         <Label
                                             Grid.Row="1" Grid.Column="2"
                                             Text="{Binding AgeB}"
                                             HorizontalTextAlignment="Center"
                                             Padding="20,0"
                                             TextColor="white"
-                                            BackgroundColor="SlateGray"/>
+                                            BackgroundColor="DarkBlue"/>
                                 
                                         <Label
                                             Grid.Row="0" Grid.Column="3"
@@ -223,14 +223,14 @@
                                             Padding="20,0"
                                             HorizontalTextAlignment="Center"
                                             TextColor="White"
-                                            BackgroundColor="Black"/>
+                                            BackgroundColor="DarkBlue"/>
                                         <Label
                                             Grid.Row="1" Grid.Column="3"
                                             Text="{Binding AgeC}"
                                             HorizontalTextAlignment="Center"
                                             Padding="20,0"
                                             TextColor="White"
-                                            BackgroundColor="SlateGray"/>
+                                            BackgroundColor="DarkBlue"/>
                                     </Grid>
                                 
                                     <Grid 
@@ -321,7 +321,9 @@
         </Frame>
         <Frame Grid.Row="2">
             <Button
-                Text="Debug"
+                Text="戻る"
+                TextColor="Black"
+                BackgroundColor="Coral"
                 Clicked="ClickedDebug"/>
         </Frame>
     </Grid>

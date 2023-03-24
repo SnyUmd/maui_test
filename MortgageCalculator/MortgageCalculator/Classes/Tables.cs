@@ -92,4 +92,6 @@ namespace MortgageCalculator.Classes
         public static CreateTablesString CreateTableStr = new();
 
     }
+
+
 }

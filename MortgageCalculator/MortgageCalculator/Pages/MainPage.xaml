@@ -141,7 +141,7 @@
                             Padding="10,0">
                         <Picker 
                             x:Name="PickerType"
-                        FontSize="18"
+                            FontSize="18"
                             TextColor="Black"
                             TitleColor="Black"
                             BackgroundColor="LightGray"
@@ -326,11 +326,12 @@
                     Clicked="ClickedBtnCal"/>
 
                 <Button
+                    x:Name="BtnHistory"
                     Grid.Column="1"
                     Text="履歴"
                     FontSize="18"
                     TextColor="White"
-                    BackgroundColor="Coral"
+                    BackgroundColor="SlateGray"
                     Clicked="ClickedHistory"/>
 
                 <Button
@@ -338,8 +339,9 @@
                     Text="☆"
                     FontSize="24"
                     TextColor="White"
-                    BackgroundColor="Coral"
-                    Clicked="ClickedBtnCal"/>
+                    BackgroundColor="SlateGray"
+                    Clicked="ClickedBtnCal"
+                    IsEnabled="false"/>
             </Grid>
         </Frame>
         

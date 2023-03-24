@@ -9,7 +9,9 @@ namespace MortgageCalculator.Pages;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+    public static bool UpdateRequest = false;
+
+    int count = 0;
     Action<int> actionChangeTypeImage;
 
     public MainPage()
@@ -47,6 +49,37 @@ public partial class MainPage : ContentPage
                 Navigation.RemovePage(page);
             }
         }
+
+        if (UpdateRequest)
+        {
+            Debug.Write("--------------------");
+            Debug.Write("update request : true");
+            Debug.Write("--------------------");
+
+            EntryLoanPrice.Text = ClsCommon.LoanStatus.LoanPrice.ToString();
+            EntryInterestRate.Text = ClsCommon.LoanStatus.InterestRate.ToString();
+            EntryYearsOfRepayment.Text = ClsCommon.LoanStatus.YearsOfRepayment.ToString();
+            PickerType.SelectedIndex = ClsCommon.LoanStatus.RepaymentType;
+            EntrySaving.Text = ClsCommon.LoanStatus.Saving.ToString();
+            EntryAgeA.Text = ClsCommon.LoanStatus.AgeA.ToString();
+            EntryAgeB.Text = ClsCommon.LoanStatus.AgeB.ToString();
+            EntryAgeC.Text = ClsCommon.LoanStatus.AgeC.ToString();
+
+            UpdateRequest = false;
+        }
+
+        int cnt = ClsCommon.GetRecordNum(Tables.tables_name[(int)EnmTable_num.tbl_history_status]);
+
+        if (cnt > 0)
+        {
+            BtnHistory.IsEnabled = true;
+            BtnHistory.BackgroundColor = Colors.Coral;
+        }
+        else
+        {
+            BtnHistory.IsEnabled = false;
+            BtnHistory.BackgroundColor = Colors.SlateGray;
+        }
     }
 
     //*******************************************************************
@@ -72,13 +105,14 @@ public partial class MainPage : ContentPage
     //*******************************************************************
     private async void ClickedHistory(object sender, EventArgs e)
     {
-        List<string> lstHistiry = new List<string>();
+        List<string> lstHistiry = GetRecord(Tables.tables_name[(int)EnmTable_num.tbl_history_status]);
 
         await Navigation.PushModalAsync(new Pages.Modal.RecordSelectModal(lstHistiry));
+        int a = 0;
     }
 
     //*******************************************************************
-    private List<string> GetHistory(string table_name)
+    private List<string> GetRecord(string table_name)
     {
         string query = $"select * from {table_name};";
         return MauiCtrl.SqliteCtrl.ReadQuery(ClsCommon.DbFilePath, query);
@@ -122,7 +156,35 @@ public partial class MainPage : ContentPage
         //selectTypeImage(PickerType.SelectedIndex);
         actionChangeTypeImage(PickerType.SelectedIndex);
 
-        SetStatus_EndOfHistory();
+        /*
+        string puery = $"SELECT COUNT(*) FROM {Tables.tables_name[(int)EnmTable_num.tbl_history_status]}";
+        List<string> records = SqliteCtrl.ReadQuery(ClsCommon.DbFilePath, puery);
+        JsonNode jn = JsonNode.Parse(records[0]);
+        int cnt = int.Parse(jn["COUNT(*)"].ToString());
+        */
+
+        /*
+        string puery = $"select * from {Tables.tables_name[(int)EnmTable_num.tbl_history_status]}";
+        List<string> records = SqliteCtrl.ReadQuery(ClsCommon.DbFilePath, puery);
+        */
+        int cnt = ClsCommon.GetRecordNum(Tables.tables_name[(int)EnmTable_num.tbl_history_status]);
+
+        if (cnt > 0)
+        {
+            SetStatus_EndOfHistory();
+        }
+        else
+        {
+            EntryLoanPrice.Text = "3000";
+            EntryInterestRate.Text = "0.5";
+            EntryYearsOfRepayment.Text = "35";
+            PickerType.SelectedIndex = 0;
+            EntrySaving.Text = "15";
+            EntryAgeA.Text = "41";
+            EntryAgeB.Text = "50";
+            EntryAgeC.Text = "";
+
+        }
     }
 
     //*******************************************************************
@@ -158,7 +220,7 @@ public partial class MainPage : ContentPage
         //履歴の最後のテーブル情報に画面を更新
         //string query = $"select * from {Tables.tables_name[(int)EnmTable_num.tbl_history_status]};";
         //var history = MauiCtrl.SqliteCtrl.ReadQuery(ClsCommon.DbFilePath, query);
-        var history = GetHistory(Tables.tables_name[(int)EnmTable_num.tbl_history_status]);
+        var history = GetRecord(Tables.tables_name[(int)EnmTable_num.tbl_history_status]);
 
 
         var record = JsonNode.Parse(history[history.Count - 1]);
