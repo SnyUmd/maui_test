@@ -99,7 +99,8 @@ public partial class MainPage : ContentPage
 
         AddHistory();
 
-        await Navigation.PushAsync(new Pages.ResultPage());
+        //await Navigation.PushAsync(new Pages.ResultPage());
+        await Navigation.PushModalAsync(new Pages.ResultPage());
     }
 
     //*******************************************************************

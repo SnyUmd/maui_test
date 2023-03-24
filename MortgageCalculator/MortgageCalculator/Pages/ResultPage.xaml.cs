@@ -123,7 +123,7 @@ public partial class ResultPage : ContentPage
     }
 
     //*******************************************************************
-    private void ClickedDebug(object sender, EventArgs e)
+    private async void ClickedDebug(object sender, EventArgs e)
     {
         //int y = 0;
         //var resultBuf = CalLoan_Values(true);
@@ -138,6 +138,8 @@ public partial class ResultPage : ContentPage
         //    }
         //}
         //Debug.WriteLine("-------------------");
-        Navigation.PopAsync(true);
+        //Navigation.PopAsync(true);
+        await Navigation.PopModalAsync();
+
     }
 }
