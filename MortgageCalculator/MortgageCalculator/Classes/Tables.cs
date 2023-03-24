@@ -30,6 +30,7 @@ namespace MortgageCalculator.Classes
             "interest_rate",
             "years_of_repayment",
             "loan_type",
+            "saving",
             "age_a",
             "age_b",
             "age_c"
@@ -42,6 +43,7 @@ namespace MortgageCalculator.Classes
             "interest_rate",
             "years_of_repayment",
             "loan_type",
+            "saving",
             "age_a",
             "age_b",
             "age_c",
@@ -54,12 +56,13 @@ namespace MortgageCalculator.Classes
         {
             public string[] tbl_saved_status = new string[]
             {
-                "id integer prymary key",
+                "id integer primary key",
                 "status_name text",
                 "loan_price int",
                 "interest_rate real",
                 "years_of_repayment int",
                 "loan_type int",
+                "saving",
                 "age_a int default null",
                 "age_b int default null",
                 "age_c int default null"
@@ -67,11 +70,12 @@ namespace MortgageCalculator.Classes
 
             public string[] tbl_history_status = new string[]
             {
-                "id integer prymary key",
+                "id integer primary key",
                 "loan_price int",
                 "interest_rate real",
                 "years_of_repayment int",
                 "loan_type int",
+                "saving",
                 "age_a int default null",
                 "age_b int default null",
                 "age_c int default null",

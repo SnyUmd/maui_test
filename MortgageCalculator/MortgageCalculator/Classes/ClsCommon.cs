@@ -33,8 +33,8 @@ namespace MortgageCalculator.Classes
         };
         public static string[] LoanText =
         {
-            "元金均等返済",
-            "元利均等返済"
+            "元利均等返済", 
+            "元金均等返済"
         };
 
         //class Tablesの情報---------------------------------

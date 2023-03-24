@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using MauiCtrl;
 using System.Diagnostics;
+using System.Text.Json.Nodes;
 
 namespace MortgageCalculator.Pages;
 
@@ -32,6 +33,22 @@ public partial class MainPage : ContentPage
     }
 
     //*******************************************************************
+    protected override async void OnAppearing()
+    {
+        // 子画面をナビゲーションから削除
+        var existingPages = Navigation.NavigationStack.ToList();
+        Console.WriteLine(existingPages?.Count);
+        foreach (var page in existingPages)
+        {
+            if (page != null && page != this)
+            {
+                Console.WriteLine("------------------RemovePage: " + page.Title);
+                Navigation.RemovePage(page);
+            }
+        }
+    }
+
+    //*******************************************************************
     private async void ClickedBtnCal(object sender, EventArgs e)
     {
         ClsCommon.LoanStatus = GetLoanStatus();
@@ -44,6 +61,9 @@ public partial class MainPage : ContentPage
         Debug.WriteLine($"年齢A：{ClsCommon.LoanStatus.AgeA} 歳");
         Debug.WriteLine($"年齢B：{ClsCommon.LoanStatus.AgeB} 歳");
         Debug.WriteLine($"年齢C：{ClsCommon.LoanStatus.AgeC} 歳");
+
+
+        AddHistory();
 
         await Navigation.PushAsync(new Pages.ResultPage());
     }
@@ -85,15 +105,53 @@ public partial class MainPage : ContentPage
         //selectTypeImage(PickerType.SelectedIndex);
         actionChangeTypeImage(PickerType.SelectedIndex);
 
+        SetStatus_EndOfHistory();
+    }
+
+    //*******************************************************************
+    private void AddHistory()
+    {
+        string[] columnValues = new string[]
+        {
+            "null",
+            EntryLoanPrice.Text,
+            EntryInterestRate.Text,
+            EntryYearsOfRepayment.Text,
+            PickerType.SelectedIndex.ToString(),
+            EntrySaving.Text,
+            EntryAgeA.Text,
+            EntryAgeB.Text,
+            EntryAgeC.Text != "" ? EntryAgeC.Text : "null",
+            "null",
+            "null"
+        };
+
+        string tableName = Tables.tables_name[(int)EnmTable_num.tbl_history_status];
+        MauiCtrl.SqliteCtrl.InsertRecord(ClsCommon.DbFilePath, tableName, columnValues);
+        
+        string query = $"select * from {tableName};";
+        Debug.WriteLine(MauiCtrl.SqliteCtrl.ReadQuery(ClsCommon.DbFilePath, query));
+
+    }
+
+
+    //*******************************************************************
+    private void SetStatus_EndOfHistory()
+    {
+        //履歴の最後のテーブル情報に画面を更新
+        string query = $"select * from {Tables.tables_name[(int)EnmTable_num.tbl_history_status]};";
+        var history = MauiCtrl.SqliteCtrl.ReadQuery(ClsCommon.DbFilePath, query);
+        var record = JsonNode.Parse(history[history.Count - 1]);
+        Debug.WriteLine(record[Tables.tbl_history_status[1]]);
         //umd仕様
-        EntryLoanPrice.Text = "4000";
-        EntryInterestRate.Text = "1.5";
-        EntryYearsOfRepayment.Text = "35";
-        PickerType.SelectedIndex = 0;
-        EntrySaving.Text = "17";
-        EntryAgeA.Text = "41";
-        EntryAgeB.Text = "50";
-        EntryAgeC.Text = "";
+        EntryLoanPrice.Text = record[Tables.tbl_history_status[1]].ToString();
+        EntryInterestRate.Text = record[Tables.tbl_history_status[2]].ToString();
+        EntryYearsOfRepayment.Text = record[Tables.tbl_history_status[3]].ToString();
+        PickerType.SelectedIndex = int.Parse(record[Tables.tbl_history_status[4]].ToString());
+        EntrySaving.Text = record[Tables.tbl_history_status[5]].ToString();
+        EntryAgeA.Text = record[Tables.tbl_history_status[6]].ToString();
+        EntryAgeB.Text = record[Tables.tbl_history_status[7]].ToString();
+        EntryAgeC.Text = record[Tables.tbl_history_status[8]].ToString();
     }
 
     //*******************************************************************

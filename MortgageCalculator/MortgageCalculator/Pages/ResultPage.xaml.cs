@@ -31,6 +31,8 @@ public partial class ResultPage : ContentPage
         updateCorectionView();
     }
 
+    
+
     /*
     //*******************************************************************
     private List<string> CalLoan_Json(bool is_repayment_amount)
